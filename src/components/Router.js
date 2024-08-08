@@ -22,7 +22,7 @@ const MyRouter = () => {
     <Router>
       <Routes>
         <Route path="/landing/" element={<LandingPage />} />
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/auth/" element={<Auth />} />
         <Route path="/dashboard/" element={<Dashboard />} />
         <Route path="/upload/" element={<AddNote />} />
