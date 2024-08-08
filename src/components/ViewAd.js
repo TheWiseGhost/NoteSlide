@@ -164,12 +164,12 @@ const ViewAd = () => {
               onClick={() => setSidebarOpen(!sidebarOpen)}
             />
             <img src="/images/NoteSlideLogo.png" className="w-8 ml-4 md:ml-8" />
-            <a
-              href="/dashboard"
+            <button
+              onClick={() => handleNavigation("/dashboard")}
               className="ml-2 hidden md:block font-nats text-2xl font-semibold text-neutral-800"
             >
               Note Slide
-            </a>
+            </button>
           </div>
           <div className="flex flex-row items-center flex-1 justify-center md:mr-12">
             <div className="flex items-center rounded-2xl border border-black w-2/3 md:w-2/5">
