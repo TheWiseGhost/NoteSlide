@@ -82,16 +82,14 @@ const Hero = () => {
             onClick={() => handleNavigation("/auth")}
             className="main w-28 px-8 text-xl animate-floatUp"
           >
-            <a href="#">Login</a>
+            <span>Login</span>
           </div>
           <div
             className="wipe mt-2 py-3 px-6 text-xl animate-floatUp"
             style={{ cursor: "pointer" }}
             onClick={() => (window.location.href = "#whynoteslide")}
           >
-            <a href="#whynoteslide" className="">
-              Learn
-            </a>
+            <span>Learn</span>
           </div>
         </div>
       </div>

@@ -228,9 +228,7 @@ const Profile = () => {
                 className="wipe py-2 font-outfit px-4 text-md cursor-pointer"
                 onClick={handleLogout}
               >
-                <a href="" className="">
-                  Logout
-                </a>
+                <span>Logout</span>
               </div>
             </div>
             {/* Right Section */}
@@ -292,7 +290,7 @@ const Profile = () => {
                   onClick={() => handleNavigation("/upload")}
                   className="main mx-20 md:mx-0 py-3 px-6 text-lg font-josefin md:ml-12 mt-4 md:mt-0"
                 >
-                  <a href="#">Upload Note</a>
+                  <span>Upload Note</span>
                 </div>
               </div>
 

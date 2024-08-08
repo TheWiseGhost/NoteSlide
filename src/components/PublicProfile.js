@@ -284,7 +284,7 @@ const PublicProfile = () => {
                   onClick={() => handleNavigation("/upload")}
                   className="main py-3 px-6 text-lg font-josefin"
                 >
-                  <a href="#">Upload Note</a>
+                  <span>Upload Note</span>
                 </div>
               </div>
             </div>

@@ -54,9 +54,7 @@ const Reviews = () => {
           style={{ cursor: "pointer" }}
           onClick={() => (window.location.href = "#")}
         >
-          <a href="#" className="font-outfit">
-            Get Notes
-          </a>
+          <span className="font-outfit">Get Notes</span>
         </div>
         <div className="flex items-center w-1/5">
           <img

@@ -194,9 +194,7 @@ const BusinessPortal = () => {
                   className="wipe py-2 font-outfit px-4 text-md cursor-pointer"
                   onClick={handleLogout}
                 >
-                  <a href="" className="">
-                    Logout
-                  </a>
+                  <span>Logout</span>
                 </div>
               </div>
               <div className="flex flex-row items-center space-x-4 pt-6">
@@ -205,8 +203,8 @@ const BusinessPortal = () => {
                   className="w-1/2 text-black cursor-pointer"
                   fontSize="large"
                 />
-                <a
-                  href="/admanager"
+                <button
+                  onClick={() => handleNavigation("/admanager")}
                   className="text-black text-xl pt-2 font-josefin hover:underline"
                 >
                   Visit Ad Manager{" "}
@@ -217,14 +215,14 @@ const BusinessPortal = () => {
                   ) : (
                     <span></span>
                   )}
-                </a>
+                </button>
               </div>
             </div>
             <div
               onClick={() => handleNavigation("/buyadcredit")}
               className="main py-6 md:py-0 px-8 my-6 text-xl"
             >
-              <a href="">Buy More Ad Credit</a>
+              <span>Buy More Ad Credit</span>
             </div>
           </div>
 

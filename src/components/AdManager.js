@@ -370,12 +370,12 @@ const AdManager = () => {
               onClick={() => setSidebarOpen(!sidebarOpen)}
             />
             <img src="/images/NoteSlideLogo.png" className="w-8 ml-8" />
-            <a
-              href="/dashboard"
+            <button
+              onClick={() => handleNavigation("/dashboard")}
               className="ml-2 font-nats text-2xl font-semibold text-neutral-800"
             >
               Note Slide
-            </a>
+            </button>
           </div>
           <div className="flex flex-row items-center flex-1 justify-center mr-8">
             <div className="flex items-center rounded-2xl border border-gray-700 border-gray-300-black w-2/5">
@@ -453,7 +453,7 @@ const AdManager = () => {
               onClick={() => handleNavigation("/uploadad")}
               className="main ml-10 px-6 py-3 text-lg"
             >
-              <a href="/uploadad">Upload Ad</a>
+              <span>Upload Ad</span>
             </div>
           </div>
 

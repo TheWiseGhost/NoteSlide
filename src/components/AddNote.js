@@ -302,7 +302,7 @@ const AddNote = () => {
                   }
                   className="main w-28 px-8 py-4 text-xl"
                 >
-                  <a href="#">Upload</a>
+                  <span>Upload</span>
                 </div>
               )}
 

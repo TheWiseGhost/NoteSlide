@@ -38,9 +38,7 @@ const Testimonials = () => {
           style={{ cursor: "pointer" }}
           onClick={() => (window.location.href = "#")}
         >
-          <a href="#" className="font-outfit font-medium">
-            Join Us
-          </a>
+          <span className="font-outfit font-medium">Join Us</span>
         </div>
       </div>
       <div className="text-center text-5xl text-neutral-600 pt-12 font-outfit">

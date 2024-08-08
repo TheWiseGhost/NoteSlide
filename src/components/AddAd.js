@@ -171,12 +171,12 @@ const AddAd = () => {
               onClick={() => setSidebarOpen(!sidebarOpen)}
             />
             <img src="/images/NoteSlideLogo.png" className="w-8 ml-8" />
-            <a
-              href="/dashboard"
-              className="ml-2 font-nats text-2xl font-semibold"
+            <button
+              onClick={() => handleNavigation("/dashboard")}
+              className="ml-2 font-nats text-2xl font-semibold text-neutral-800"
             >
               Note Slide
-            </a>
+            </button>
           </div>
           <div className="flex flex-row items-center flex-1 justify-center mr-12">
             <div className="flex items-center rounded-2xl border border-black w-2/5">
@@ -284,7 +284,7 @@ const AddAd = () => {
                   }
                   className="main w-36 mx-auto px-8 py-4 text-xl"
                 >
-                  <a href="#">Create</a>
+                  <span>Create</span>
                 </div>
               )}
             </div>

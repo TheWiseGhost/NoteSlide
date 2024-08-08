@@ -1,7 +1,9 @@
 import React from "react";
 import "../index.css";
+import { useNavigate } from "react-router-dom";
 
 const FinalCall = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white flex flex-col px-20 pt-20 pb-12">
       <div className="text-center">
@@ -17,8 +19,11 @@ const FinalCall = () => {
       </div>
       <div className="flex flex-row pt-20 mx-auto space-x-12 justify-center items-center">
         <div className="flex w-full justify-end">
-          <div className="flex main w-40 py-6 text-2xl">
-            <a href="#">Sign Up</a>
+          <div
+            onClick={() => navigate("/auth")}
+            className="flex main w-40 py-6 text-2xl"
+          >
+            <span>Sign Up</span>
           </div>
         </div>
         <div className="w-3 h-32 bg-gray-300"></div>
