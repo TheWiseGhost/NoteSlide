@@ -163,7 +163,11 @@ const ViewAd = () => {
               className="w-8 h-8 text-gray-700 cursor-pointer"
               onClick={() => setSidebarOpen(!sidebarOpen)}
             />
-            <img src="/images/NoteSlideLogo.png" className="w-8 ml-4 md:ml-8" />
+            <img
+              src="/images/NoteSlideLogo.png"
+              className="w-8 ml-4 md:ml-8"
+              alt="NoteSlide Logo"
+            />
             <button
               onClick={() => handleNavigation("/dashboard")}
               className="ml-2 hidden md:block font-nats text-2xl font-semibold text-neutral-800"

@@ -14,7 +14,11 @@ const Hero = () => {
       {/* Navigation Bar */}
       <nav className="w-full flex items-center justify-between p-4 px-20 pt-12 animate-floatDown">
         <div className="flex flex-row justify-center w-full md:w-fit items-center space-x-4">
-          <img src="/images/NoteSlideLogo.png" className="w-10" />
+          <img
+            src="/images/NoteSlideLogo.png"
+            className="w-10"
+            alt="NoteSlide Logo"
+          />
           <div className="text-2xl text-black font-semibold font-nats">
             Note Slide
           </div>

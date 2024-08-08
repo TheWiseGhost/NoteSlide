@@ -1,0 +1,17 @@
+https://noteslide.netlify.app/
+https://noteslide.netlify.app/landing/
+https://noteslide.netlify.app/auth/
+https://noteslide.netlify.app/dashboard/
+https://noteslide.netlify.app/upload/
+https://noteslide.netlify.app/view/:id/
+https://noteslide.netlify.app/ad/:id/
+https://noteslide.netlify.app/business_main/
+https://noteslide.netlify.app/business/
+https://noteslide.netlify.app/uploadad/
+https://noteslide.netlify.app/admanager/
+https://noteslide.netlify.app/profile/
+https://noteslide.netlify.app/favorites/
+https://noteslide.netlify.app/buyadcredit/
+https://noteslide.netlify.app/verify/:token/
+https://noteslide.netlify.app/verify_business/:token/
+https://noteslide.netlify.app/public_profile/:username/

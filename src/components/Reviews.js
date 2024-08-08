@@ -33,7 +33,7 @@ const Reviews = () => {
           <div className="triangle -left-0.5 -top-0.5"></div>
           <div className="text-3xl pb-2 text-black font-bold mb-2">★★★★★</div>
           <p className="text-neutral-800 text-2xl font-outfit mx-4">
-            “Made my first $100 in just my second week”
+            “Visiting daily in just my second week”
           </p>
         </div>
         <div className="relative border-2 border-black p-4 py-6 rounded shadow-md w-full md:w-4/5 mx-auto text-center">
@@ -47,8 +47,8 @@ const Reviews = () => {
       <div className="flex flex-row items-center justify-center space-x-16 mb-4 mt-8">
         <div className="flex items-center w-1/5">
           <img
-            src="../static/images/GoogleReviews.png"
-            alt="Google"
+            src="/images/GoogleReviews.png"
+            alt="Google Reviews"
             className="w-full pt-6 mr-2"
           />
         </div>
@@ -61,8 +61,8 @@ const Reviews = () => {
         </div>
         <div className="flex items-center w-1/5">
           <img
-            src="../static/images/Trustpilot.png"
-            alt="Trustpilot"
+            src="/images/Trustpilot.png"
+            alt="Trustpilot Rating"
             className="w-full pt-6 mr-2"
           />
         </div>

@@ -27,7 +27,7 @@ const Testimonials = () => {
           <div className="triangle -left-0.5 -top-0.5"></div>
           <div className="text-3xl pb-2 font-bold mb-2">★★★★★</div>
           <p className="text-neutral-800 text-2xl font-outfit mx-4">
-            “Can’t wait to see how much I can make when this platform grows”
+            “Can’t wait to see how much I can make when this grows”
           </p>
         </div>
       </div>

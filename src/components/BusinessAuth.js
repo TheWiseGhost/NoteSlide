@@ -82,7 +82,7 @@ const BusinessAuth = () => {
     <div className="flex min-h-screen ml-6">
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full bg-white shadow-lg transform transition-transform duration-300 ${
+        className={`z-50 fixed top-0 left-0 h-full bg-white shadow-lg transform transition-transform duration-300 ${
           sidebarOpen ? "translate-x-0 w-28" : "-translate-x-32 w-0"
         }`}
       >
@@ -115,7 +115,11 @@ const BusinessAuth = () => {
               className="w-8 h-8 text-gray-700 cursor-pointer"
               onClick={() => setSidebarOpen(!sidebarOpen)}
             />
-            <img src="/images/NoteSlideLogo.png" className="w-8 ml-4 md:ml-8" />
+            <img
+              src="/images/NoteSlideLogo.png"
+              className="w-8 ml-4 md:ml-8"
+              alt="NoteSlide Logo"
+            />
             <button
               onClick={() => handleNavigation("/dashboard")}
               className="ml-2 hidden md:block font-nats text-2xl font-semibold text-neutral-800"
@@ -166,7 +170,7 @@ const BusinessAuth = () => {
         </div>
 
         {/* Auth */}
-        <div className="wrapper h-screen">
+        <div className="wrapper h-screen pt-20">
           <div className="card-switch pt-0">
             <label className="switch">
               <input

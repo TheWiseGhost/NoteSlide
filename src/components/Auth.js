@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 
 const Auth = () => {
@@ -64,8 +65,20 @@ const Auth = () => {
 
   return (
     <>
-      <img src="/images/NoteSlideLogo.png" className="w-12 mx-auto pt-8" />
-      <div className="wrapper h-screen overflow-hidden">
+      <Helmet>
+        <title>Login | NoteSlide</title>
+        <meta
+          name="description"
+          content="Login to NoteSlide to browse notes online quickly for free."
+        />
+        <link rel="canonical" href="https://noteslide.netlify.app/auth" />
+      </Helmet>
+      <img
+        src="/images/NoteSlideLogo.png"
+        className="w-12 mx-auto pt-8"
+        alt="NoteSlide Logo"
+      />
+      <div className="wrapper pt-20">
         <div className="card-switch">
           <label className="switch">
             <input type="checkbox" className="toggle" onChange={handleToggle} />

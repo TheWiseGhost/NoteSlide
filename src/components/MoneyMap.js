@@ -35,7 +35,7 @@ const MoneyMap = () => {
           <div className="relative flex flex-row justify-start items-center w-3/5 mr-auto ml-36">
             <div className="border-2 border-black w-full md:w-1/2 text-2xl font-alata p-8 rounded-md shadow-md">
               <div className="triangle -left-0.5 -top-0.5"></div>
-              <p>Creators earn an average of one dollar per 100 views.</p>
+              <p>Creators earn an average of one dollar per 500 views.</p>
             </div>
           </div>
           <div className="relative flex flex-row justify-end items-center w-3/5 ml-auto mr-36">

@@ -151,7 +151,7 @@ tr:nth-child(even) {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 85vh;
 }
 /* switch card */
 .switch {
