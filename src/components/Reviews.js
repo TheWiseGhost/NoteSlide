@@ -4,7 +4,10 @@ import "../index.css";
 
 const Reviews = () => {
   return (
-    <div className="flex flex-col items-center pt-16 min-h-screen bg-white p-4">
+    <div
+      className="flex flex-col items-center pt-16 min-h-screen bg-white p-4"
+      id="reviews"
+    >
       <h1 className="text-center text-4xl mb-12 font-outfit font-semibold">
         Join the best platform to gain info for{" "}
         <span>

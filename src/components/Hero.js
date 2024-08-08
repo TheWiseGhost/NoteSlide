@@ -20,7 +20,11 @@ const Hero = () => {
           </div>
         </div>
         <div className="hidden md:flex flex-row items-center space-x-12 text-2xl font-josefin">
-          <button className="text_button font-reem-kufi bg-white text-gray-700">
+          <button
+            style={{ cursor: "pointer" }}
+            onClick={() => (window.location.href = "#whynoteslide")}
+            className="text_button font-reem-kufi bg-white text-gray-700"
+          >
             <span className="span-mother">
               <span>I</span>
               <span>n</span>
@@ -34,7 +38,11 @@ const Hero = () => {
               <span>o</span>
             </span>
           </button>
-          <button className="text_button font-reem-kufi bg-white text-gray-700">
+          <button
+            style={{ cursor: "pointer" }}
+            onClick={() => (window.location.href = "#reviews")}
+            className="text_button font-reem-kufi bg-white text-gray-700"
+          >
             <span className="span-mother">
               <span>R</span>
               <span>e</span>
@@ -54,7 +62,11 @@ const Hero = () => {
               <span>s</span>
             </span>
           </button>
-          <button className="text_button font-reem-kufi bg-white text-green-500">
+          <button
+            style={{ cursor: "pointer" }}
+            onClick={() => (window.location.href = "#moneymap")}
+            className="text_button font-reem-kufi bg-white text-green-500"
+          >
             <span className="span-mother">
               <span>$</span>
               <span>$</span>

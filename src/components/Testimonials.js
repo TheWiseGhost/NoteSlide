@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Testimonials = () => {
+  const navigate = useNavigate();
   return (
     <div
       className="flex flex-col items-center space-y-8 pt-20 min-h-screen pb-12 p-6 bg-white"
@@ -36,7 +38,7 @@ const Testimonials = () => {
         <div
           className="wipe ml-8 py-2 px-6 text-xl text-center"
           style={{ cursor: "pointer" }}
-          onClick={() => (window.location.href = "#")}
+          onClick={() => navigate("/auth")}
         >
           <span className="font-outfit font-medium">Join Us</span>
         </div>
