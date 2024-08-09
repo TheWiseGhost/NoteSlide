@@ -8,6 +8,7 @@ const Auth = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleToggle = () => {
@@ -17,6 +18,7 @@ const Auth = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const url = isSignUp
       ? "https://noteslidebackend.onrender.com/api/signup/"
       : "https://noteslidebackend.onrender.com/api/login/";
@@ -34,7 +36,6 @@ const Auth = () => {
       const data = await response.json();
       if (response.ok) {
         // Handle successful response
-        console.log("Success:", JSON.stringify(data.user));
         // Clear the form
         setEmail("");
         setName("");
@@ -60,6 +61,8 @@ const Auth = () => {
       }
     } catch (error) {
       setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -104,9 +107,18 @@ const Auth = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                  <button className="flip-card__btn" type="submit">
-                    Let's go!
-                  </button>
+                  {loading ? (
+                    <div className="flex flex-row justify-center items-center space-x-2">
+                      <div className="loader" />
+                      <p className="font-outfit text-sm">
+                        This may take a minute
+                      </p>
+                    </div>
+                  ) : (
+                    <button className="flip-card__btn" type="submit">
+                      Let's go!
+                    </button>
+                  )}
                 </form>
               </div>
               <div className={`flip-card__back ${!isSignUp ? "flip" : ""}`}>
@@ -136,9 +148,18 @@ const Auth = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                  <button className="flip-card__btn" type="submit">
-                    Confirm!
-                  </button>
+                  {loading ? (
+                    <div className="flex flex-row justify-center items-center space-x-2">
+                      <div className="loader" />
+                      <p className="font-outfit text-sm">
+                        This may take a minute
+                      </p>
+                    </div>
+                  ) : (
+                    <button className="flip-card__btn" type="submit">
+                      Confirm!
+                    </button>
+                  )}
                 </form>
               </div>
             </div>

@@ -39,7 +39,6 @@ const ViewAd = () => {
           }
         } else {
           console.error("Invalid ad URL format");
-          console.log(parsedData.s3_path);
         }
       } catch (error) {
         console.error("Error fetching ad URL:", error);

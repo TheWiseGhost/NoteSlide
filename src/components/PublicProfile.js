@@ -98,7 +98,6 @@ const PublicProfile = () => {
         }
       );
       const data = await response.json();
-      console.log(data.following);
       user.following = data.following;
       localStorage.setItem("user", JSON.stringify(user));
       window.location.reload();

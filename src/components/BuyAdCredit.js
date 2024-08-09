@@ -18,7 +18,6 @@ const BuyAdCredit = () => {
 
   useEffect(() => {
     if (!user) {
-      console.log("User not found, redirecting to /business");
       navigate("/business");
     }
   }, []);

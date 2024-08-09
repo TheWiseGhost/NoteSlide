@@ -102,7 +102,6 @@ const AddNote = () => {
       }
 
       const data = await response.json();
-      console.log("File uploaded successfully:", data);
       alert("File uploaded successfully!");
       setSelectedFile(null); // Clear selected file after upload
       setTitle(""); // Clear title after upload

@@ -107,7 +107,6 @@ const AddAd = () => {
       if (data.warning) {
         alert(data.warning);
       } else {
-        console.log("File uploaded successfully:", data);
         alert("File uploaded successfully!");
         setSelectedFile(null);
         setTitle("");

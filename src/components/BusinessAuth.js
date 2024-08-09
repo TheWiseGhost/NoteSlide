@@ -10,6 +10,7 @@ import { Helmet } from "react-helmet-async";
 const BusinessAuth = () => {
   const user = localStorage.getItem("business_user");
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -34,6 +35,7 @@ const BusinessAuth = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const url = isSignUp
       ? "https://noteslidebackend.onrender.com/api/business_signup/"
       : "https://noteslidebackend.onrender.com/api/business_login/";
@@ -50,8 +52,6 @@ const BusinessAuth = () => {
 
       const data = await response.json();
       if (response.ok) {
-        // Handle successful response
-        console.log("Success:", data);
         // Clear the form
         setEmail("");
         setName("");
@@ -76,6 +76,8 @@ const BusinessAuth = () => {
       }
     } catch (error) {
       setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -211,9 +213,18 @@ const BusinessAuth = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                       />
-                      <button className="flip-card__btn" type="submit">
-                        Let's go!
-                      </button>
+                      {loading ? (
+                        <div className="flex flex-row justify-center items-center space-x-2">
+                          <div className="loader" />
+                          <p className="font-outfit text-sm">
+                            This may take a minute
+                          </p>
+                        </div>
+                      ) : (
+                        <button className="flip-card__btn" type="submit">
+                          Let's Go!
+                        </button>
+                      )}
                     </form>
                   </div>
                   <div className={`flip-card__back ${!isSignUp ? "flip" : ""}`}>
@@ -243,9 +254,18 @@ const BusinessAuth = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                       />
-                      <button className="flip-card__btn" type="submit">
-                        Confirm!
-                      </button>
+                      {loading ? (
+                        <div className="flex flex-row justify-center items-center space-x-2">
+                          <div className="loader" />
+                          <p className="font-outfit text-sm">
+                            This may take a minute
+                          </p>
+                        </div>
+                      ) : (
+                        <button className="flip-card__btn" type="submit">
+                          Confirm!
+                        </button>
+                      )}
                     </form>
                   </div>
                 </div>
