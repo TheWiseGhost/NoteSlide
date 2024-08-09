@@ -86,7 +86,7 @@ const BusinessAuth = () => {
         <meta
           name="description"
           content="Partner with NoteSlide to reach a large academic audience of students and college learners. Advertise on our platform and connect with
-          engaged users seeking educational resources."
+          users seeking educational notes."
         />
         <link rel="canonical" href="https://noteslide.netlify.app/business" />
       </Helmet>

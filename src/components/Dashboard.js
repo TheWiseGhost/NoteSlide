@@ -18,8 +18,8 @@ const Dashboard = () => {
         <title>Notes | NoteSlide</title>
         <meta
           name="description"
-          content="Discover a huge library of free, user-uploaded notes that relate to Math, science, literature, history, and many more subjects
-           with NoteSlide. Perfect for students and college learners."
+          content="Discover a huge library of free, user-uploaded notes relating to Math, science, literature, history, and many more subjects
+           with NoteSlide. Built for students."
         />
         <link rel="canonical" href="https://noteslide.netlify.app/dashboard" />
       </Helmet>
