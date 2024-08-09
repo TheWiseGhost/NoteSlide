@@ -21,7 +21,7 @@ const FinalCall = () => {
         <div className="flex w-full justify-end">
           <div
             onClick={() => navigate("/auth")}
-            className="flex main w-40 py-6 text-2xl"
+            className="flex main w-28 md:w-40 py-6 text-2xl"
           >
             <span>Sign Up</span>
           </div>
