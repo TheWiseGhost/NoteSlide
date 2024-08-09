@@ -69,7 +69,7 @@ const Auth = () => {
         <title>Login | NoteSlide</title>
         <meta
           name="description"
-          content="Login to NoteSlide to browse notes online quickly for free."
+          content="Log in to NoteSlide to access your personalized library of free, user-uploaded notes. Secure your study resources, share information with classmates, and stay organized. Join the NoteSlide community of students across the USA and the globe to enhance your learning experience today."
         />
         <link rel="canonical" href="https://noteslide.netlify.app/auth" />
       </Helmet>

@@ -111,7 +111,7 @@ const ViewNote = () => {
         <title>{note.title} | NoteSlide</title>
         <meta
           name="description"
-          content={`${note.description}. This note was published to NoteSlide and relates to the interest ${note.interest}.`}
+          content={`${note.description}. This note called ${note.title} was published to NoteSlide by ${note.username} and relates to the interest ${note.interest}.`}
         />
         <link
           rel="canonical"

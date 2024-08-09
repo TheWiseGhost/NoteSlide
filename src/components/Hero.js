@@ -23,11 +23,11 @@ const Hero = () => {
             Note Slide
           </div>
         </div>
-        <div className="hidden md:flex flex-row items-center space-x-12 text-2xl font-josefin">
+        <div className="hidden md:flex flex-row items-center space-x-12 text-2xl font-outfit">
           <button
             style={{ cursor: "pointer" }}
             onClick={() => (window.location.href = "#whynoteslide")}
-            className="text_button font-reem-kufi bg-white text-gray-700"
+            className="text_button bg-white text-gray-700"
           >
             <span className="span-mother">
               <span>I</span>
@@ -45,7 +45,7 @@ const Hero = () => {
           <button
             style={{ cursor: "pointer" }}
             onClick={() => (window.location.href = "#reviews")}
-            className="text_button font-reem-kufi bg-white text-gray-700"
+            className="text_button bg-white text-gray-700"
           >
             <span className="span-mother">
               <span>R</span>
@@ -69,7 +69,7 @@ const Hero = () => {
           <button
             style={{ cursor: "pointer" }}
             onClick={() => (window.location.href = "#moneymap")}
-            className="text_button font-reem-kufi bg-white text-green-500"
+            className="text_button bg-white text-green-500"
           >
             <span className="span-mother">
               <span>$</span>
