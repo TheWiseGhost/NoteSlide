@@ -11,7 +11,7 @@ const VerifyEmail = () => {
     const verifyEmail = async () => {
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/api/verify/${token}/`,
+          `https://noteslidebackend.onrender.com/api/verify/${token}/`,
           {
             method: "GET",
           }

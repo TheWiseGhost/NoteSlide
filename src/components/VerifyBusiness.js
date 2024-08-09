@@ -11,7 +11,7 @@ const VerifyBusiness = () => {
     const verifyBusiness = async () => {
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/api/verify_business/${token}/`,
+          `https://noteslidebackend.onrender.com/api/verify_business/${token}/`,
           {
             method: "GET",
           }

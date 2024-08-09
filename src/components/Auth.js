@@ -18,8 +18,8 @@ const Auth = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const url = isSignUp
-      ? "http://127.0.0.1:8000/api/signup/"
-      : "http://127.0.0.1:8000/api/login/";
+      ? "https://noteslidebackend.onrender.com/api/signup/"
+      : "https://noteslidebackend.onrender.com/api/login/";
     const payload = isSignUp ? { email, name, password } : { email, password };
 
     try {

@@ -29,13 +29,16 @@ const Profile = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/api/user_notes/`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ user_id: user.id }),
-        });
+        const response = await fetch(
+          `https://noteslidebackend.onrender.com/api/user_notes/`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ user_id: user.id }),
+          }
+        );
         const data = await response.json();
         setNotes(data);
         setLoading(false);
@@ -47,13 +50,16 @@ const Profile = () => {
 
     const fetchStats = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/api/user_stats/`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ user_id: user.id }),
-        });
+        const response = await fetch(
+          `https://noteslidebackend.onrender.com/api/user_stats/`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ user_id: user.id }),
+          }
+        );
         const data = await response.json();
         setStats(data);
       } catch (error) {
@@ -69,13 +75,16 @@ const Profile = () => {
 
   const clearNotifs = async () => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/clear_notifs/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ user_id: user.id }),
-      });
+      const response = await fetch(
+        `https://noteslidebackend.onrender.com/api/clear_notifs/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ user_id: user.id }),
+        }
+      );
       const data = await response.json();
       if (data.ok) {
         window.alert("Notification's cleared");
@@ -90,13 +99,16 @@ const Profile = () => {
 
   const deleteNote = async (note_id) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/delete_note/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id: note_id }),
-      });
+      const response = await fetch(
+        `https://noteslidebackend.onrender.com/api/delete_note/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id: note_id }),
+        }
+      );
       const data = await response.json();
       window.alert("Note Deleted");
       window.location.reload();

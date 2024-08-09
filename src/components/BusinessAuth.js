@@ -35,8 +35,8 @@ const BusinessAuth = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const url = isSignUp
-      ? "http://127.0.0.1:8000/api/business_signup/"
-      : "http://127.0.0.1:8000/api/business_login/";
+      ? "https://noteslidebackend.onrender.com/api/business_signup/"
+      : "https://noteslidebackend.onrender.com/api/business_login/";
     const payload = isSignUp ? { email, name, password } : { email, password };
 
     try {

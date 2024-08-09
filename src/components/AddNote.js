@@ -89,7 +89,7 @@ const AddNote = () => {
       formData.append("user_id", user.id);
       formData.append("interest", interest);
 
-      const uploadUrl = "http://127.0.0.1:8000/api/uploadnote/";
+      const uploadUrl = "https://noteslidebackend.onrender.com/api/uploadnote/";
 
       const response = await fetch(uploadUrl, {
         method: "POST",

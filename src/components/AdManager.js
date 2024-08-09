@@ -74,7 +74,7 @@ const AdManager = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/all_ads/?id=${campaignId}`
+        `https://noteslidebackend.onrender.com/api/all_ads/?id=${campaignId}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch ads data");
@@ -90,7 +90,7 @@ const AdManager = () => {
 
   const fetchCampaignsData = async () => {
     try {
-      const url = "http://127.0.0.1:8000/api/all_campaigns/";
+      const url = "https://noteslidebackend.onrender.com/api/all_campaigns/";
       const response = await fetch(url, {
         method: "POST",
         headers: {
@@ -113,13 +113,16 @@ const AdManager = () => {
 
   const fetchCampaignDetails = async (campaignId) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/campaign/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id: campaignId }),
-      });
+      const response = await fetch(
+        `https://noteslidebackend.onrender.com/api/campaign/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id: campaignId }),
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to fetch campaign details");
       }
@@ -149,13 +152,16 @@ const AdManager = () => {
       interest: interest,
     };
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/add_campaign/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(campaignData),
-      });
+      const response = await fetch(
+        "https://noteslidebackend.onrender.com/api/add_campaign/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(campaignData),
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to add campaign");
       }
@@ -180,13 +186,16 @@ const AdManager = () => {
       interest: interest,
     };
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/edit_campaign/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(campaignData),
-      });
+      const response = await fetch(
+        "https://noteslidebackend.onrender.com/api/edit_campaign/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(campaignData),
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to edit campaign");
       }
@@ -209,7 +218,7 @@ const AdManager = () => {
     };
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/delete_campaign/",
+        "https://noteslidebackend.onrender.com/api/delete_campaign/",
         {
           method: "POST",
           headers: {
@@ -270,13 +279,16 @@ const AdManager = () => {
       budget: hasBudget ? budget : 0,
     };
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/edit_ad/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(adData),
-      });
+      const response = await fetch(
+        "https://noteslidebackend.onrender.com/api/edit_ad/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(adData),
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to edit ad");
       }
@@ -299,13 +311,16 @@ const AdManager = () => {
       id: ad_id,
     };
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/delete_ad/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(adData),
-      });
+      const response = await fetch(
+        "https://noteslidebackend.onrender.com/api/delete_ad/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(adData),
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to delete ad");
       }

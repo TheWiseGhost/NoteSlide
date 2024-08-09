@@ -41,7 +41,7 @@ const BusinessPortal = () => {
     const fetchStats = async () => {
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/api/business_stats/`,
+          `https://noteslidebackend.onrender.com/api/business_stats/`,
           {
             method: "POST",
             headers: {
@@ -71,13 +71,16 @@ const BusinessPortal = () => {
       domain: domain,
     };
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/edit_business/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://noteslidebackend.onrender.com/api/edit_business/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to edit business");
       }

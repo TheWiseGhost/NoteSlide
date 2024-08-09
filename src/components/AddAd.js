@@ -28,7 +28,7 @@ const AddAd = () => {
   useEffect(() => {
     const fetchCampaigns = async () => {
       try {
-        const url = "http://127.0.0.1:8000/api/all_campaigns/";
+        const url = "https://noteslidebackend.onrender.com/api/all_campaigns/";
         const response = await fetch(url, {
           method: "POST",
           headers: {
@@ -92,7 +92,7 @@ const AddAd = () => {
       formData.append("campaign", selectedCampaign);
       formData.append("user_id", user.id);
 
-      const uploadUrl = "http://127.0.0.1:8000/api/uploadad/";
+      const uploadUrl = "https://noteslidebackend.onrender.com/api/uploadad/";
 
       const response = await fetch(uploadUrl, {
         method: "POST",

@@ -27,7 +27,7 @@ const ViewAd = () => {
     const fetchAdUrl = async () => {
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/api/random_ad/${id}/`
+          `https://noteslidebackend.onrender.com/api/random_ad/${id}/`
         );
         const data = await response.json();
         const parsedData = JSON.parse(data); // Parse the JSON string to an object
@@ -90,7 +90,7 @@ const ViewAd = () => {
   const decreaseAdMoney = async (adId) => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/decrease_money/`,
+        `https://noteslidebackend.onrender.com/api/decrease_money/`,
         {
           method: "POST",
           headers: {
@@ -110,7 +110,7 @@ const ViewAd = () => {
   const increaseAdClicks = async (adId) => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/update_ad_clicks/`,
+        `https://noteslidebackend.onrender.com/api/update_ad_clicks/`,
         {
           method: "POST",
           headers: {

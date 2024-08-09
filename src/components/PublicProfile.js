@@ -32,7 +32,7 @@ const PublicProfile = () => {
     const fetchNotes = async () => {
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/api/person_notes/${username}/`,
+          `https://noteslidebackend.onrender.com/api/person_notes/${username}/`,
           {
             method: "GET",
             headers: {
@@ -52,7 +52,7 @@ const PublicProfile = () => {
     const fetchStats = async () => {
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/api/person_stats/${username}/`,
+          `https://noteslidebackend.onrender.com/api/person_stats/${username}/`,
           {
             method: "GET",
             headers: {
@@ -84,16 +84,19 @@ const PublicProfile = () => {
   const handleFollow = async () => {
     try {
       setFollowLoading(true);
-      const response = await fetch(`http://127.0.0.1:8000/api/toggle_follow/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          user_id: user.id,
-          person: username,
-        }),
-      });
+      const response = await fetch(
+        `https://noteslidebackend.onrender.com/api/toggle_follow/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            user_id: user.id,
+            person: username,
+          }),
+        }
+      );
       const data = await response.json();
       console.log(data.following);
       user.following = data.following;

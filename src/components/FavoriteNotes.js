@@ -26,7 +26,8 @@ const FavoriteNotes = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const uploadUrl = "http://127.0.0.1:8000/api/favorites/";
+        const uploadUrl =
+          "https://noteslidebackend.onrender.com/api/favorites/";
 
         const response = await fetch(uploadUrl, {
           method: "POST",

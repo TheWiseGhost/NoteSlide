@@ -32,18 +32,21 @@ const NoteView = () => {
         let response;
         if (searchTerm) {
           response = await fetch(
-            `http://127.0.0.1:8000/api/search_notes/?search=${encodeURIComponent(
+            `https://noteslidebackend.onrender.com/api/search_notes/?search=${encodeURIComponent(
               searchTerm
             )}`
           );
         } else {
-          response = await fetch("http://127.0.0.1:8000/api/notes/", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ user_id: user.id }),
-          });
+          response = await fetch(
+            "https://noteslidebackend.onrender.com/api/notes/",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ user_id: user.id }),
+            }
+          );
         }
         const data = await response.json();
         setNotes(data);

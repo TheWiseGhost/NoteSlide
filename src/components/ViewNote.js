@@ -33,13 +33,16 @@ const ViewNote = () => {
     // Fetch the note by ID
     const fetchNote = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/api/note/${id}/`, {
-          method: "POST", // or the appropriate HTTP method
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ user_id: user.id }),
-        });
+        const response = await fetch(
+          `https://noteslidebackend.onrender.com/api/note/${id}/`,
+          {
+            method: "POST", // or the appropriate HTTP method
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ user_id: user.id }),
+          }
+        );
         const data = await response.json();
         setNote(data);
       } catch (error) {
@@ -57,7 +60,7 @@ const ViewNote = () => {
     try {
       setLikeLoading(true);
       const response = await fetch(
-        `http://127.0.0.1:8000/api/note/${id}/like/`,
+        `https://noteslidebackend.onrender.com/api/note/${id}/like/`,
         {
           method: "POST",
           headers: {
@@ -83,7 +86,7 @@ const ViewNote = () => {
     try {
       setFavLoading(true);
       const response = await fetch(
-        `http://127.0.0.1:8000/api/note/${id}/favorite/`,
+        `https://noteslidebackend.onrender.com/api/note/${id}/favorite/`,
         {
           method: "POST",
           headers: {
