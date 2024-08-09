@@ -12,8 +12,8 @@ const Hero = () => {
   return (
     <div className="flex flex-col pb-20 md:pb-0 md:min-h-screen bg-white">
       {/* Navigation Bar */}
-      <nav className="w-full flex items-center justify-between p-4 px-20 pt-12 animate-floatDown">
-        <div className="flex flex-row justify-center w-full md:w-fit items-center space-x-4">
+      <nav className="w-full flex items-center justify-between p-4 px-8 md:px-20 pt-12 animate-floatDown">
+        <div className="flex flex-row justify-center w-fit items-center space-x-4">
           <img
             src="/images/NoteSlideLogo.png"
             className="w-10"
@@ -23,65 +23,74 @@ const Hero = () => {
             Note Slide
           </div>
         </div>
-        <div className="hidden md:flex flex-row items-center space-x-12 text-2xl font-outfit">
-          <button
+        <div className="flex flex-row items-center space-x-12 text-xl font-outfit">
+          <div className="hidden md:flex space-x-12">
+            <button
+              style={{ cursor: "pointer" }}
+              onClick={() => (window.location.href = "#whynoteslide")}
+              className="text_button bg-white text-gray-700"
+            >
+              <span className="span-mother">
+                <span>I</span>
+                <span>n</span>
+                <span>f</span>
+                <span>o</span>
+              </span>
+              <span className="span-mother2">
+                <span>I</span>
+                <span>n</span>
+                <span>f</span>
+                <span>o</span>
+              </span>
+            </button>
+            <button
+              style={{ cursor: "pointer" }}
+              onClick={() => (window.location.href = "#reviews")}
+              className="text_button bg-white text-gray-700"
+            >
+              <span className="span-mother">
+                <span>R</span>
+                <span>e</span>
+                <span>v</span>
+                <span>i</span>
+                <span>e</span>
+                <span>w</span>
+                <span>s</span>
+              </span>
+              <span className="span-mother2">
+                <span>R</span>
+                <span>e</span>
+                <span>v</span>
+                <span>i</span>
+                <span>e</span>
+                <span>w</span>
+                <span>s</span>
+              </span>
+            </button>
+            <button
+              style={{ cursor: "pointer" }}
+              onClick={() => (window.location.href = "#moneymap")}
+              className="text_button bg-white text-green-500"
+            >
+              <span className="span-mother">
+                <span>$</span>
+                <span>$</span>
+                <span>$</span>
+              </span>
+              <span className="span-mother2">
+                <span>$</span>
+                <span>$</span>
+                <span>$</span>
+              </span>
+            </button>
+          </div>
+          <div
+            className="wipe pt-2 pb-1 px-4 font-josefin text-lg w-fit"
             style={{ cursor: "pointer" }}
-            onClick={() => (window.location.href = "#whynoteslide")}
-            className="text_button bg-white text-gray-700"
+            onClick={() => handleNavigation("/auth")}
           >
-            <span className="span-mother">
-              <span>I</span>
-              <span>n</span>
-              <span>f</span>
-              <span>o</span>
-            </span>
-            <span className="span-mother2">
-              <span>I</span>
-              <span>n</span>
-              <span>f</span>
-              <span>o</span>
-            </span>
-          </button>
-          <button
-            style={{ cursor: "pointer" }}
-            onClick={() => (window.location.href = "#reviews")}
-            className="text_button bg-white text-gray-700"
-          >
-            <span className="span-mother">
-              <span>R</span>
-              <span>e</span>
-              <span>v</span>
-              <span>i</span>
-              <span>e</span>
-              <span>w</span>
-              <span>s</span>
-            </span>
-            <span className="span-mother2">
-              <span>R</span>
-              <span>e</span>
-              <span>v</span>
-              <span>i</span>
-              <span>e</span>
-              <span>w</span>
-              <span>s</span>
-            </span>
-          </button>
-          <button
-            style={{ cursor: "pointer" }}
-            onClick={() => (window.location.href = "#moneymap")}
-            className="text_button bg-white text-green-500"
-          >
-            <span className="span-mother">
-              <span>$</span>
-              <span>$</span>
-              <span>$</span>
-            </span>
-            <span className="span-mother2">
-              <span>$</span>
-              <span>$</span>
-              <span>$</span>
-            </span>
-          </button>
+            <span>Sign Up</span>
+          </div>
         </div>
       </nav>
 

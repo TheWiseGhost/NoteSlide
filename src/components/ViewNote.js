@@ -110,17 +110,19 @@ const ViewNote = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{note?.title} | NoteSlide</title>
-        <meta
-          name="description"
-          content={`${note?.description}. This note called ${note?.title} was published to NoteSlide by ${note?.username} and relates to the interest ${note?.interest}.`}
-        />
-        <link
-          rel="canonical"
-          href={`https://noteslide.netlify.app/view/${id}`}
-        />
-      </Helmet>
+      {note && (
+        <Helmet>
+          <title>{note.title} | NoteSlide</title>
+          <meta
+            name="description"
+            content={`${note.description}. This note called ${note.title} was published to NoteSlide by ${note.username} and relates to the interest ${note.interest}.`}
+          />
+          <link
+            rel="canonical"
+            href={`https://noteslide.netlify.app/view/${id}`}
+          />
+        </Helmet>
+      )}
       <div className="flex min-h-screen ml-6">
         {/* Sidebar */}
         <div
