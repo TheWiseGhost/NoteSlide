@@ -44,7 +44,7 @@ const Reviews = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-row items-center justify-center space-x-16 mb-4 mt-8">
+      <div className="flex flex-row items-center justify-center space-x-6 md:space-x-16 mb-4 mt-8">
         <div className="flex items-center w-1/5">
           <img
             src="/images/GoogleReviews.png"
@@ -53,7 +53,7 @@ const Reviews = () => {
           />
         </div>
         <div
-          className="flex wipe items-center py-4 px-6 text-xl mt-6"
+          className="flex wipe items-center py-4 px-4 md:px-6 text-xl mt-6"
           style={{ cursor: "pointer" }}
           onClick={() => (window.location.href = "#")}
         >

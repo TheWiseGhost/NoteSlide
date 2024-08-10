@@ -31,12 +31,12 @@ const Testimonials = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-row pt-10 items-center">
+      <div className="flex flex-col md:flex-row pt-10 items-center">
         <div className="flex text-center text-3xl font-outfit font-semibold">
           “This needs to be used by every single student”
         </div>
         <div
-          className="wipe ml-4 md:ml-8 py-2 px-4 md:px-6 text-xl text-center"
+          className="wipe ml-0 md:ml-8 py-2 px-4 md:px-6 mt-8 md:mt-0 text-xl text-center"
           style={{ cursor: "pointer" }}
           onClick={() => navigate("/auth")}
         >

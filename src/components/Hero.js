@@ -23,7 +23,7 @@ const Hero = () => {
             Note Slide
           </div>
         </div>
-        <div className="flex flex-row items-center space-x-12 text-xl font-outfit">
+        <div className="flex flex-row items-center space-x-0 md:space-x-12 text-xl font-outfit">
           <div className="hidden md:flex space-x-12">
             <button
               style={{ cursor: "pointer" }}
