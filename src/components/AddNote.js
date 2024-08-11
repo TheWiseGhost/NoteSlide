@@ -19,12 +19,6 @@ const AddNote = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
 
-  useEffect(() => {
-    if (!user) {
-      navigate("/auth");
-    }
-  }, [user, navigate]);
-
   const interests = [
     "Math",
     "Science",
@@ -74,6 +68,9 @@ const AddNote = () => {
   };
 
   const handleUpload = async () => {
+    if (!user) {
+      navigate("/auth");
+    }
     setLoading(true);
     if (!selectedFile || !title || !shortTitle || !interest || !description) {
       alert("Please fill all fields and select a file.");

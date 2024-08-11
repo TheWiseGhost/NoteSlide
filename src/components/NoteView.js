@@ -20,12 +20,6 @@ const NoteView = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) {
-      navigate("/auth");
-    }
-  }, [user, navigate]);
-
-  useEffect(() => {
     const fetchNotes = async () => {
       setLoading(true); // Ensure loading state is set when fetching data
       try {
@@ -44,7 +38,7 @@ const NoteView = () => {
               headers: {
                 "Content-Type": "application/json",
               },
-              body: JSON.stringify({ user_id: user.id }),
+              body: JSON.stringify({ user_id: user?.id }),
             }
           );
         }
@@ -65,6 +59,9 @@ const NoteView = () => {
   };
 
   const handleNoteClick = (id) => {
+    if (!user) {
+      navigate("/auth");
+    }
     navigate(`/ad/${id}`);
   };
 
