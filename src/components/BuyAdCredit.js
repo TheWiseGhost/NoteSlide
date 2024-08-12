@@ -155,42 +155,72 @@ const BuyAdCredit = () => {
               text={"Get your feet wet"}
               price={"5"}
               loading={loading}
-              handleBuy={handleBuy}
+              handleBuy={() => {
+                window.open(
+                  "https://buy.stripe.com/test_8wMdTe5vW6endcQ6op",
+                  "_blank"
+                );
+              }}
             />
             <AdCreditCard
               title={"Starter"}
               text={"First campaign?"}
               price={"20"}
               loading={loading}
-              handleBuy={handleBuy}
+              handleBuy={() => {
+                window.open(
+                  "https://buy.stripe.com/test_eVag1m0bC5ajgp2fZ0",
+                  "_blank"
+                );
+              }}
             />
             <AdCreditCard
               title={"Regular"}
               text={"Standard Budget to Grow"}
               price={"50"}
               loading={loading}
-              handleBuy={handleBuy}
+              handleBuy={() => {
+                window.open(
+                  "https://buy.stripe.com/test_28og1m1fG46f4GkbIL",
+                  "_blank"
+                );
+              }}
             />
             <AdCreditCard
               title={"Business"}
               text={"Spend Money to Make Money"}
               price={"100"}
               loading={loading}
-              handleBuy={handleBuy}
+              handleBuy={() => {
+                window.open(
+                  "https://buy.stripe.com/test_aEUbL65vWbyH5Ko7sw",
+                  "_blank"
+                );
+              }}
             />
             <AdCreditCard
               title={"Baller"}
               text={"The Money Machine that keeps printing"}
               price={"500"}
               loading={loading}
-              handleBuy={handleBuy}
+              handleBuy={() => {
+                window.open(
+                  "https://buy.stripe.com/test_cN23eA1fGfOXc8M6ot",
+                  "_blank"
+                );
+              }}
             />
             <AdCreditCard
               title={"Millionare"}
               text={"There's no stopping you from going to the top"}
               price={"1500"}
               loading={loading}
-              handleBuy={handleBuy}
+              handleBuy={() => {
+                window.open(
+                  "https://buy.stripe.com/test_4gwaH26A0eKTgp2aEK",
+                  "_blank"
+                );
+              }}
             />
           </div>
         </div>
@@ -232,7 +262,7 @@ const AdCreditCard = ({ title, text, price, loading, handleBuy }) => {
           <button
             aria-describedby="tier-company"
             className="items-center font-nats justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black"
-            onClick={() => handleBuy(amount)}
+            onClick={() => handleBuy()}
           >
             Get started
           </button>
