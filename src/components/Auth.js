@@ -81,7 +81,7 @@ const Auth = () => {
         className="w-12 mx-auto pt-8"
         alt="NoteSlide Logo"
       />
-      <div className="wrapper pt-20">
+      <div className="wrapper pt-4 md:pt-20 overflow-hidden">
         <div className="card-switch">
           <label className="switch">
             <input type="checkbox" className="toggle" onChange={handleToggle} />
