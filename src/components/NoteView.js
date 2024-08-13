@@ -100,7 +100,7 @@ const NoteView = () => {
       {/* Main Content */}
       <div className="flex flex-col flex-1">
         {/* Top Navbar */}
-        <div className="flex items-center justify-between bg-white pt-8 p-2 md:p-4 md:pt-8 sticky top-0 z-50">
+        <div className="flex items-center justify-between bg-white pt-8 pr-4 md:p-4 md:pt-8 sticky top-0 z-50">
           <div className="flex items-center">
             <FaBars
               className="w-8 h-8 text-gray-700 cursor-pointer"
@@ -147,7 +147,7 @@ const NoteView = () => {
             />
           </div>
           <div className="flex items-center space-x-2 md:space-x-4 md:mr-12">
-            <div className="w-12 h-10 flex items-center justify-center">
+            <div className="w-12 h-10 hidden md:flex items-center justify-center">
               <FaBell className="w-6 h-6 text-gray-700" />
               <div className="font-outfit relative top-0 mb-3 right-0 w-5 h-5 bg-red-500 text-white text-xs font-bold flex items-center justify-center rounded-full">
                 <p>{user?.notifs}</p>

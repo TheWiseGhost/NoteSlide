@@ -161,7 +161,7 @@ const Profile = () => {
       {/* Main Content */}
       <div className="flex flex-col w-full">
         {/* Top Navbar */}
-        <div className="flex items-center justify-between pt-8 bg-white p-2 md:p-4 md:pt-8 sticky top-0 z-50">
+        <div className="flex items-center justify-between pt-8 bg-white pr-4 md:p-4 md:pt-8 sticky top-0 z-50">
           <div className="flex items-center">
             <FaBars
               className="w-8 h-8 text-gray-700 cursor-pointer"
@@ -205,7 +205,7 @@ const Profile = () => {
             />
           </div>
           <div className="flex items-center space-x-2 md:space-x-4 md:mr-12">
-            <div className="w-12 h-10 flex items-center justify-center">
+            <div className="w-12 h-10 hidden md:flex items-center justify-center">
               <FaBell className="w-6 h-6 text-gray-700" />
               <div className="font-outfit relative top-0 mb-3 right-0 w-5 h-5 bg-red-500 text-white text-xs font-bold flex items-center justify-center rounded-full">
                 <p>{user?.notifs}</p>
@@ -249,9 +249,9 @@ const Profile = () => {
             </div>
             {/* Right Section */}
             <div className="w-full md:w-3/5 md:mx-8 flex flex-row justify-around items-center md:p-4 md:pt-8">
-              <div className="py-4 px-6 md:px-10 rounded border-gray-400 border-2 text-center">
-                <div className="text-lg font-outfit">Views</div>
-                <div className="text-2xl justify-center font-josefin font-bold">
+              <div className="py-4 px-4 md:px-10 rounded border-gray-400 border-2 text-center">
+                <div className="text-md md:text-lg font-outfit">Views</div>
+                <div className="text-lg md:text-2xl justify-center font-josefin font-bold">
                   {statLoading ? (
                     <div className="loader"></div>
                   ) : (
@@ -259,9 +259,9 @@ const Profile = () => {
                   )}
                 </div>
               </div>
-              <div className="py-4 px-6 md:px-10 rounded border-gray-400 border-2 text-center">
-                <div className="text-lg font-outfit">Likes</div>
-                <div className="text-2xl justify-center font-josefin font-bold">
+              <div className="py-4 px-4 md:px-10 rounded border-gray-400 border-2 text-center">
+                <div className="text-md md:text-lg font-outfit">Likes</div>
+                <div className="text-lg md:text-2xl justify-center font-josefin font-bold">
                   {statLoading ? (
                     <div className="loader"></div>
                   ) : (
@@ -269,16 +269,16 @@ const Profile = () => {
                   )}
                 </div>
               </div>
-              <div className="py-4 px-6 md:px-10 rounded border-gray-400 border-2 text-center">
-                <div className="text-lg font-outfit">Earned</div>
-                <div className="text-2xl font-josefin font-bold">
-                  ${user?.earned}
+              <div className="py-4 px-4 md:px-10 rounded border-gray-400 border-2 text-center">
+                <div className="text-md md:text-lg font-outfit">Earned</div>
+                <div className="text-lg md:text-2xl font-josefin font-bold">
+                  #
                 </div>
               </div>
-              <div className="py-4 px-6 md:px-10 rounded border-gray-400 border-2 text-center">
-                <div className="text-lg font-outfit">Balance</div>
-                <div className="text-2xl font-josefin font-bold">
-                  ${user?.balance}
+              <div className="py-4 px-4 md:px-10 rounded border-gray-400 border-2 text-center">
+                <div className="text-md md:text-lg font-outfit">Balance</div>
+                <div className="text-lg md:text-2xl font-josefin font-bold">
+                  #
                 </div>
               </div>
             </div>

@@ -347,17 +347,18 @@ tr:nth-child(even) {
   .flip-card__inner,
   .flip-card__front,
   .flip-card__back {
-    width: 400px;
+    width: 300px;
     height: 380px;
   }
 
   .flip-card__input {
-    width: 300px;
+    width: 200px;
     height: 50px;
   }
 
   .title {
     font-size: 25px;
+    font-family: "Alata";
   }
 
   .flip-card__btn {
