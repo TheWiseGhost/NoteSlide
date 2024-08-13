@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const WhyNoteSlide = () => {
   const navigate = useNavigate();
   return (
-    <div className="p-4 min-h-screen mx-auto w-2/3" id="whynoteslide">
+    <div className="p-4 min-h-screen mx-auto w-5/6 md:w-2/3" id="whynoteslide">
       <h2 className="text-5xl pb-16 pt-12 text-center font-semibold font-outfit">
         Why Note Slide?
       </h2>

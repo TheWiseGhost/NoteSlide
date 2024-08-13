@@ -13,13 +13,13 @@ const Hero = () => {
     <div className="flex flex-col pb-20 md:pb-0 md:min-h-screen bg-white">
       {/* Navigation Bar */}
       <nav className="w-full flex items-center justify-between p-4 px-8 md:px-20 pt-12 animate-floatDown">
-        <div className="flex flex-row justify-center w-fit items-center space-x-4">
+        <div className="flex flex-row justify-center w-fit items-center space-x-2 md:space-x-4">
           <img
             src="/images/NoteSlideLogo.png"
             className="w-10"
             alt="NoteSlide Logo"
           />
-          <div className="text-2xl text-black font-semibold font-nats">
+          <div className="text-2xl text-black font-bold md:font-semibold font-nats">
             Note Slide
           </div>
         </div>

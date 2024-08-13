@@ -17,7 +17,7 @@ const MoneyMap = () => {
 
         <div className="container mx-auto flex flex-col items-center space-y-8 md:space-y-0">
           {/* Staggered Divs */}
-          <div className="relative flex flex-row justify-start items-center w-3/5 mr-auto ml-36">
+          <div className="relative flex flex-row justify-start items-center w-4/5 md:w-3/5 mr-auto ml-6 md:ml-36">
             <div className="border-2 border-black w-full md:w-1/2 text-2xl font-alata p-8 rounded-md shadow-md">
               <div className="triangle -left-0.5 -top-0.5"></div>
               <p>
@@ -26,19 +26,19 @@ const MoneyMap = () => {
               </p>
             </div>
           </div>
-          <div className="relative flex flex-row justify-end items-center w-3/5 ml-auto mr-36">
+          <div className="relative flex flex-row justify-end items-center w-4/5 md:w-3/5 ml-auto mr-6 md:mr-36">
             <div className="border-2 border-black w-full md:w-1/2 text-2xl font-alata p-8 rounded-md shadow-md">
               <div className="triangle rotate-90 -right-0.5 -top-0.5"></div>
               <p>Why not upload them to Note Slide and make some $$$</p>
             </div>
           </div>
-          <div className="relative flex flex-row justify-start items-center w-3/5 mr-auto ml-36">
+          <div className="relative flex flex-row justify-start items-center w-4/5 md:w-3/5 mr-auto ml-6 md:ml-36">
             <div className="border-2 border-black w-full md:w-1/2 text-2xl font-alata p-8 rounded-md shadow-md">
               <div className="triangle -left-0.5 -top-0.5"></div>
               <p>Creators earn an average of one dollar per 500 views.</p>
             </div>
           </div>
-          <div className="relative flex flex-row justify-end items-center w-3/5 ml-auto mr-36">
+          <div className="relative flex flex-row justify-end items-center w-4/5 md:w-3/5 ml-auto mr-6 md:mr-36">
             <div className="border-2 border-black w-full md:w-1/2 text-2xl font-alata p-8 rounded-md shadow-md">
               <div className="triangle rotate-90 -right-0.5 -top-0.5"></div>
               <p>

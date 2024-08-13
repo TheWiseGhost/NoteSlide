@@ -5,10 +5,10 @@ const Testimonials = () => {
   const navigate = useNavigate();
   return (
     <div
-      className="flex flex-col items-center space-y-8 pt-20 min-h-screen pb-12 p-6 bg-white"
+      className="flex flex-col items-center space-y-8 pt-20 min-h-screen pb-12 p-2 md:p-6 bg-white"
       id="testimonials"
     >
-      <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row md:space-x-16 mx-auto mb-4 w-4/5">
+      <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row md:space-x-16 mx-auto mb-4 w-full md:w-4/5">
         <div className="relative border-2 border-black p-4 py-6 rounded shadow-md w-4/5 mx-auto text-center">
           <div className="triangle -left-0.5 -top-0.5"></div>
           <div className="text-3xl pb-2 text-black font-bold mb-2">★★★★★</div>
