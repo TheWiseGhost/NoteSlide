@@ -62,7 +62,7 @@ const NoteView = () => {
     if (!user) {
       navigate("/auth");
     }
-    navigate(`/ad/${id}`);
+    navigate(`/view/${id}`);
   };
 
   const handleSearchChange = (e) => {
