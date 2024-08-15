@@ -91,7 +91,7 @@ const BusinessAuth = () => {
           content="Partner with NoteSlide to reach a large academic audience of students and college learners. Advertise on our platform and connect with
           users seeking educational notes."
         />
-        <link rel="canonical" href="https://noteslide.netlify.app/business" />
+        <link rel="canonical" href="https://note-slide.com/business" />
       </Helmet>
       <div className="flex min-h-screen ml-6">
         {/* Sidebar */}

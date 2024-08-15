@@ -133,7 +133,7 @@ const Profile = () => {
 
   const handleCopy = (name) => {
     navigator.clipboard.writeText(
-      `https://noteslide.netlify.app/public_profile/${name}`
+      `https://note-slide.com/public_profile/${name}`
     );
     window.alert("Public Profile Link Copied");
   };

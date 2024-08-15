@@ -13,7 +13,7 @@ const Dashboard = () => {
           content="Discover a huge library of free, user-uploaded notes relating to Math, science, literature, history, and many more subjects
            with NoteSlide. Built for students."
         />
-        <link rel="canonical" href="https://noteslide.netlify.app/dashboard" />
+        <link rel="canonical" href="https://note-slide.com/dashboard" />
       </Helmet>
       <div>
         <NoteView />

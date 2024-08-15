@@ -118,10 +118,7 @@ const ViewNote = () => {
             name="description"
             content={`${note.description}. This note called ${note.title} was published to NoteSlide by ${note.username} and relates to the interest ${note.interest}.`}
           />
-          <link
-            rel="canonical"
-            href={`https://noteslide.netlify.app/view/${id}`}
-          />
+          <link rel="canonical" href={`https://note-slide.com/view/${id}`} />
         </Helmet>
       )}
       <div className="flex min-h-screen ml-6">

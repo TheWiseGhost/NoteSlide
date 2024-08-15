@@ -131,7 +131,7 @@ const AddNote = () => {
           name="description"
           content="Easily upload your notes to NoteSlide and start making money today."
         />
-        <link rel="canonical" href="https://noteslide.netlify.app/upload" />
+        <link rel="canonical" href="https://note-slide.com/upload" />
       </Helmet>
       <div className="flex h-screen overflow-auto ml-6">
         {/* Sidebar */}

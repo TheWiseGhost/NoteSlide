@@ -17,7 +17,7 @@ const LandingPage = () => {
           name="description"
           content="The home page of NoteSlide. Learn more about NoteSlide and how to get free notes + make money off of your notes here."
         />
-        <link rel="canonical" href="https://noteslide.netlify.app/" />
+        <link rel="canonical" href="https://note-slide.com/" />
       </Helmet>
       <div>
         <Hero />
