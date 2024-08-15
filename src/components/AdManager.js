@@ -4,6 +4,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
+import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
 import { FaBell, FaUserCircle, FaBars, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -396,7 +397,7 @@ const AdManager = () => {
               Note Slide
             </button>
           </div>
-          <div className="flex flex-row items-center flex-1 justify-center mr-8">
+          <div className="flex flex-row items-center flex-1 justify-center mr-6">
             <div className="flex items-center rounded-2xl border border-gray-700 border-gray-300-black w-2/5">
               <form
                 onSubmit={(e) => {
@@ -421,6 +422,17 @@ const AdManager = () => {
             />
           </div>
           <div className="flex items-center space-x-4 mr-12">
+            <div className="w-10 h-10 hidden md:flex rounded-full items-center justify-end">
+              <TipsAndUpdatesOutlinedIcon
+                onClick={() => {
+                  window.open(
+                    "https://docs.google.com/forms/d/e/1FAIpQLSeq_g58sbOCDxyyfY5-mCDt1PpFvNErzFtQFDFZzg9BA3mpqA/viewform",
+                    "_blank"
+                  );
+                }}
+                className="w-10 h-10 text-gray-700 hover:cursor-pointer cursor-pointer"
+              />
+            </div>
             <FaBell className="w-6 h-6 text-gray-700" />
             <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
               <FaUserCircle

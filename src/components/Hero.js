@@ -87,9 +87,9 @@ const Hero = () => {
           <div
             className="wipe pt-2 pb-1 px-4 font-josefin text-lg w-fit"
             style={{ cursor: "pointer" }}
-            onClick={() => handleNavigation("/auth")}
+            onClick={() => handleNavigation("/dashboard")}
           >
-            <span>Sign Up</span>
+            <span>See Notes</span>
           </div>
         </div>
       </nav>

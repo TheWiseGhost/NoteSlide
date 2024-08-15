@@ -3,6 +3,7 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import HomeIcon from "@mui/icons-material/Home";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
 import { FaBars, FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -174,7 +175,7 @@ const ViewAd = () => {
               Note Slide
             </button>
           </div>
-          <div className="flex flex-row items-center flex-1 justify-center md:mr-12">
+          <div className="flex flex-row items-center flex-1 justify-center">
             <div className="flex items-center rounded-2xl border border-black w-2/3 md:w-2/5">
               <form
                 onSubmit={() => {
@@ -200,6 +201,18 @@ const ViewAd = () => {
             />
           </div>
           <div className="flex items-center space-x-2 md:space-x-4 md:mr-12">
+            <div className="w-10 h-10 hidden md:flex rounded-full items-center justify-end">
+              <TipsAndUpdatesOutlinedIcon
+                onClick={() => {
+                  window.open(
+                    "https://docs.google.com/forms/d/e/1FAIpQLSeq_g58sbOCDxyyfY5-mCDt1PpFvNErzFtQFDFZzg9BA3mpqA/viewform",
+                    "_blank"
+                  );
+                }}
+                className="w-10 h-10 text-gray-700 hover:cursor-pointer cursor-pointer"
+              />
+            </div>
+
             <div className="w-12 h-10 hidden md:flex items-center justify-center">
               <FaBell className="w-6 h-6 text-gray-700" />
               <div className="font-outfit relative top-0 mb-3 right-0 w-5 h-5 bg-red-500 text-white text-xs font-bold flex items-center justify-center rounded-full">
