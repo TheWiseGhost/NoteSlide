@@ -11,6 +11,8 @@ https://note-slide.com/uploadad/
 https://note-slide.com/admanager/
 https://note-slide.com/profile/
 https://note-slide.com/favorites/
+https://note-slide.com/following_notes/
+https://note-slide.com/following/
 https://note-slide.com/buyadcredit/
 https://note-slide.com/verify/:token/
 https://note-slide.com/verify_business/:token/

@@ -17,6 +17,7 @@ import VerifyEmail from "./VerifyEmail";
 import VerifyBusiness from "./VerifyBusiness";
 import PublicProfile from "./PublicProfile";
 import FollowingNotes from "./FollowingNotes";
+import Following from "./Following";
 
 const MyRouter = () => {
   return (
@@ -36,6 +37,7 @@ const MyRouter = () => {
         <Route path="/profile/" element={<Profile />} />
         <Route path="/favorites/" element={<FavoriteNotes />} />
         <Route path="/following_notes/" element={<FollowingNotes />} />
+        <Route path="/following/" element={<Following />} />
         <Route path="/buyadcredit/" element={<BuyAdCredit />} />
         <Route path="/verify/:token/" element={<VerifyEmail />} />
         <Route path="/verify_business/:token/" element={<VerifyBusiness />} />

@@ -2,22 +2,21 @@ import React, { useState, useEffect } from "react";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import HomeIcon from "@mui/icons-material/Home";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
-import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
-import VisibilityIcon from "@mui/icons-material/Visibility";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
 import GroupIcon from "@mui/icons-material/Group";
 import { FaBell, FaUserCircle, FaBars, FaSearch } from "react-icons/fa";
+import { IconUserCircle } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
-import { motion, useAnimation } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
-const FollowingNotes = () => {
+const Following = () => {
+  const [following, setFollowing] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true); // State to track loading state
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
+  const isSmallScreen = useMediaQuery({ query: "(max-width: 600px)" });
 
   useEffect(() => {
     if (!user) {
@@ -25,11 +24,15 @@ const FollowingNotes = () => {
     }
   }, []);
 
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   useEffect(() => {
     const fetchNotes = async () => {
       try {
         const fetchUrl =
-          "https://noteslidebackend.onrender.com/api/user_following_notes/";
+          "https://noteslidebackend.onrender.com/api/user_following/";
 
         const response = await fetch(fetchUrl, {
           method: "POST",
@@ -38,7 +41,7 @@ const FollowingNotes = () => {
 
         const data = await response.json();
         console.log(data);
-        setNotes(data);
+        setFollowing(data);
         setLoading(false); // Set loading to false after data is fetched
       } catch (error) {
         console.error("Error fetching notes:", error);
@@ -48,14 +51,6 @@ const FollowingNotes = () => {
 
     fetchNotes();
   }, []);
-
-  const handleNavigation = (path) => {
-    navigate(path);
-  };
-
-  const handleNoteClick = (id) => {
-    navigate(`/view/${id}`);
-  };
 
   return (
     <div className="flex min-h-screen ml-6">
@@ -164,7 +159,7 @@ const FollowingNotes = () => {
           </div>
         </div>
 
-        {/* Notes */}
+        {/* Following */}
         <div className="flex flex-col">
           {loading ? (
             <div className="flex items-center justify-center h-full">
@@ -292,46 +287,102 @@ const FollowingNotes = () => {
             </div>
           ) : (
             <>
-              <div className="flex flex-row items-center justify-center md:justify-start space-x-12 mt-8 w-full">
-                <h1
-                  className={`text-lg md:text-2xl font-josefin text-gray-800 ${
-                    sidebarOpen ? "md:ml-32 mr-0" : "md:ml-12"
-                  }`}
-                >
-                  Notes Posted by Following
-                </h1>
-                <div
-                  className="wipe text-sm md:text-md pt-2 pb-1 px-4 font-josefin w-fit"
-                  style={{ cursor: "pointer" }}
-                  onClick={() => handleNavigation("/following")}
-                >
-                  <span>See Following</span>
-                </div>
-              </div>
-              <div
-                className={`mr-0 mt-4 ${
-                  sidebarOpen ? "ml-32 mr-0" : "ml-12"
-                } pt-6 pb-20 min-h-screen bg-white flex flex-wrap`}
-                style={{ gap: "48px" }} // Add gap between items
-              >
-                {notes.length > 0 ? (
-                  <>
-                    {notes.map((note) => (
-                      <NoteCard
-                        key={note._id}
-                        note={note}
-                        onClick={() => handleNoteClick(note._id)}
-                      />
-                    ))}
-                  </>
-                ) : (
-                  <div className="w-full h-full flex justify-center items-center text-center">
-                    <p className="font-outfit text-gray-700">
-                      Follow people to see followed notes
-                    </p>
+              {isSmallScreen ? (
+                <>
+                  <h1 className="font-josefin text-gray-800 text-center w-full justify-center text-3xl pb-2 pt-8">
+                    Following
+                  </h1>
+                  <div
+                    className={`mr-0 ${
+                      sidebarOpen ? "ml-24 mr-0" : "ml-12"
+                    } pb-20 min-h-screen bg-white flex flex-col space-y-2`}
+                    //   style={{ gap: "48px" }} // Add gap between items
+                  >
+                    {following.length > 0 ? (
+                      <>
+                        {following.map((user, index) => (
+                          <>
+                            <div
+                              key={index}
+                              className="flex flex-row w-full h-20 items-center justify-between p-4 rounded-lg "
+                            >
+                              <div className="flex flex-row items-center">
+                                {/* User Circle Icon */}
+                                <IconUserCircle className="h-10 w-10 text-blue-500 mr-4" />
+
+                                {/* User Name */}
+                                <span className="flex-1 text-lg font-medium">
+                                  {user.username}
+                                </span>
+                              </div>
+
+                              {/* View Button */}
+                              <div
+                                className="wipe pt-2 pb-1 px-4 font-josefin text-md w-fit mr-6"
+                                style={{ cursor: "pointer" }}
+                                onClick={() =>
+                                  handleNavigation(
+                                    `/public_profile/${user.username}/`
+                                  )
+                                }
+                              >
+                                <span>View</span>
+                              </div>
+                            </div>
+                          </>
+                        ))}
+                      </>
+                    ) : (
+                      <div className="font-outfit text-gray-700">
+                        You are currently not following anyone
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
+                </>
+              ) : (
+                <div
+                  className={`mr-0 mt-8 ${
+                    sidebarOpen ? "ml-24 mr-0" : "ml-12"
+                  } pt-6 pb-20 min-h-screen bg-white flex flex-wrap`}
+                  style={{ gap: "48px" }} // Add gap between items
+                >
+                  {following.length > 0 ? (
+                    <>
+                      {following.map((user, index) => (
+                        <>
+                          <div
+                            key={index}
+                            className="flex flex-row w-fit h-20 items-center p-4 rounded-lg "
+                          >
+                            {/* User Circle Icon */}
+                            <IconUserCircle className="h-10 w-10 text-blue-500 mr-4" />
+
+                            {/* User Name */}
+                            <span className="flex-1 text-lg font-medium mr-8">
+                              {user.username}
+                            </span>
+
+                            {/* View Button */}
+                            <div
+                              className="wipe pt-2 pb-1 px-4 font-josefin text-md w-fit"
+                              style={{ cursor: "pointer" }}
+                              onClick={() =>
+                                handleNavigation(
+                                  `/public_profile/${user.username}/`
+                                )
+                              }
+                            >
+                              <span>View</span>
+                            </div>
+                          </div>
+                        </>
+                      ))}
+                    </>
+                  ) : (
+                    <div></div>
+                  )}
+                </div>
+              )}
             </>
           )}
         </div>
@@ -340,76 +391,4 @@ const FollowingNotes = () => {
   );
 };
 
-const NoteCard = ({ note, onClick }) => {
-  const controls = useAnimation();
-  const isSmallScreen = useMediaQuery({ query: "(max-width: 600px)" });
-
-  const formatTextWithHyphens = (text, chunkSize = 15) => {
-    // Split the text by spaces
-    const segments = text.split(" ");
-
-    // Map over segments and format only those that are long enough
-    const formattedSegments = segments.map((segment) => {
-      if (segment.length >= chunkSize) {
-        return segment.split("").reduce((acc, char, index) => {
-          if (index > 0 && index % chunkSize === 0) {
-            acc += "-";
-          }
-          acc += char;
-          return acc;
-        }, "");
-      }
-      return segment;
-    });
-
-    // Join segments back with spaces
-    return formattedSegments.join(" ");
-  };
-
-  return (
-    <motion.div
-      onClick={onClick}
-      style={{
-        flex: isSmallScreen ? "0 1 90%" : "0 1 calc(25% - 48px)",
-        minWidth: isSmallScreen ? "" : "200px",
-        zIndex: 1, // Ensure it's above the background card
-      }}
-      className="relative cursor-pointer bg-blue-200 h-60"
-      onHoverStart={() => controls.start({ x: 0, y: 0 })}
-      onHoverEnd={() => controls.start({ x: -10, y: -10 })}
-    >
-      <motion.div
-        className="w-full absolute border-4 h-60 border-zinc-600 bg-white p-5 flex flex-col justify-center items-center transition-all duration-100 ease-linear"
-        animate={controls}
-        initial={{ x: -10, y: -10 }}
-      >
-        <h3 className="text-center text-xl md:text-2xl font-medium font-outfit mb-2">
-          {formatTextWithHyphens(note?.title || "")}
-        </h3>
-        <p className="text-center mb-1 font-outfit">{note?.username}</p>
-
-        <div className="flex flex-row w-full mx-4 items-end mb-1 mt-auto">
-          <div className="flex flex-row items-center justify-start w-1/2 space-x-0">
-            <div className="flex w-1/2 mr-5">
-              <span className="flex items-center ">
-                <VisibilityIcon fontSize="small" />
-                <span className="ml-1 font-outfit">{note?.views}</span>
-              </span>
-            </div>
-            <div className="items-center w-1/2 flex">
-              <span className="flex items-center">
-                <ThumbUpAltIcon fontSize="small" />
-                <span className="ml-1 font-outfit">{note?.likes}</span>
-              </span>
-            </div>
-          </div>
-          <div className="items-end w-1/2 justify-end flex pt-3">
-            <p className="text-center flex font-outfit">{note?.created_at}</p>
-          </div>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-};
-
-export default FollowingNotes;
+export default Following;

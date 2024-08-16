@@ -354,7 +354,7 @@ const Profile = () => {
                     My Posts
                   </h2>
                   <div className="flex flex-row space-x-2 items-start mb-2">
-                    <FaUserCircle className="w-6 h-6 text-gray-700" />
+                    <FaUserCircle className="w-6 h-6 text-blue-500" />
                     <p className="font-josefin text-lg text-gray-800 pr-3">
                       {user?.followers} Followers
                     </p>
