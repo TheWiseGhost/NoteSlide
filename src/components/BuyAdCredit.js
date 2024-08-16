@@ -4,6 +4,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
+import GroupIcon from "@mui/icons-material/Group";
 import { FaBars, FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -69,6 +70,10 @@ const BuyAdCredit = () => {
           />
           <CloudUploadIcon
             onClick={() => handleNavigation("/upload")}
+            className="w-1/2 text-gray-700 cursor-pointer"
+          />
+          <GroupIcon
+            onClick={() => handleNavigation("/favorites")}
             className="w-1/2 text-gray-700 cursor-pointer"
           />
           <BookmarkIcon

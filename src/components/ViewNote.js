@@ -9,6 +9,7 @@ import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
+import GroupIcon from "@mui/icons-material/Group";
 import { IconShare3 } from "@tabler/icons-react";
 import { FaBars, FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
@@ -169,6 +170,10 @@ const ViewNote = () => {
               onClick={() => handleNavigation("/upload")}
               className="w-1/2 text-gray-700 cursor-pointer"
             />
+            <GroupIcon
+              onClick={() => handleNavigation("/favorites")}
+              className="w-1/2 text-gray-700 cursor-pointer"
+            />
             <BookmarkIcon
               onClick={() => handleNavigation("/favorites")}
               className="w-1/2 text-gray-700 cursor-pointer"
@@ -239,7 +244,7 @@ const ViewNote = () => {
               </div>
               <div className="w-12 h-10 hidden md:flex items-center justify-center">
                 <FaBell className="w-6 h-6 text-gray-700" />
-                <div className="font-outfit relative top-0 mb-3 right-0 w-5 h-5 bg-red-500 text-white text-xs font-bold flex items-center justify-center rounded-full">
+                <div className="font-outfit relative top-0 mb-3 right-0 w-5 h-5 bg-red-500 text-white text-xs font-medium flex items-center justify-center rounded-full">
                   <p>{user?.notifs}</p>
                 </div>
               </div>
@@ -389,7 +394,7 @@ const ViewNote = () => {
               <div className="flex flex-col">
                 {isSmallScreen ? (
                   <div className="flex flex-col flex-grow pb-4">
-                    <div className="text-center font-alata font-semibold text-3xl pt-4 pb-6">
+                    <div className="text-center font-alata font-semibold text-3xl pt-6 pb-6">
                       {note.short_title ? (
                         <h1>{note.short_title}</h1>
                       ) : (
@@ -398,7 +403,7 @@ const ViewNote = () => {
                     </div>
                     <div className="flex flex-row justify-between">
                       <div
-                        onClick={handleViewProfile(note.username)}
+                        onClick={handleViewProfile}
                         className="flex flex-row w-1/3 space-x-2 cursor-pointer justify-center items-center hover:cursor-pointer"
                       >
                         <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
@@ -408,10 +413,10 @@ const ViewNote = () => {
                           {note.username}
                         </div>
                       </div>
-                      <div className="flex flex-row items-center justify-center w-2/3 space-x-10">
+                      <div className="flex flex-row items-center justify-center w-2/3 space-x-8">
                         <div className="flex items-center space-x-2">
-                          <VisibilityIcon fontSize="large" />
-                          <span className="text-black font-bold">
+                          <VisibilityIcon fontSize="medium" />
+                          <span className="text-black font-medium">
                             {note.views}
                           </span>
                         </div>
@@ -423,7 +428,7 @@ const ViewNote = () => {
                               {note.liked ? (
                                 <ThumbUpAltIcon
                                   onClick={() => updateLike(false)}
-                                  fontSize="large"
+                                  fontSize="medium"
                                   sx={{
                                     color: "black",
                                     cursor: "pointer",
@@ -435,7 +440,7 @@ const ViewNote = () => {
                               ) : (
                                 <ThumbUpOffAltIcon
                                   onClick={() => updateLike(true)}
-                                  fontSize="large"
+                                  fontSize="medium"
                                   sx={{
                                     color: "gray",
                                     cursor: "pointer",
@@ -445,7 +450,7 @@ const ViewNote = () => {
                                   }}
                                 />
                               )}
-                              <span className="text-black font-bold">
+                              <span className="text-black font-medium">
                                 {note.likes}
                               </span>
                             </>
@@ -458,7 +463,7 @@ const ViewNote = () => {
                             {note.favorite ? (
                               <BookmarkRemoveTwoToneIcon
                                 onClick={() => updateFavorite(false)}
-                                fontSize="large"
+                                fontSize="medium"
                                 sx={{
                                   color: "gold",
                                   cursor: "pointer",
@@ -470,7 +475,7 @@ const ViewNote = () => {
                             ) : (
                               <BookmarkAddTwoToneIcon
                                 onClick={() => updateFavorite(true)}
-                                fontSize="large"
+                                fontSize="medium"
                                 sx={{
                                   color: "gray",
                                   cursor: "pointer",
@@ -484,11 +489,13 @@ const ViewNote = () => {
                         )}
                         <div>
                           <IconShare3
-                            className="text-gray-800"
-                            onClick={handleShare(
-                              `https://note-slide.com/view/${id}`,
-                              `View ${note?.title} on NoteSlide`
-                            )}
+                            className="text-gray-800 cursor-pointer"
+                            onClick={() =>
+                              handleShare(
+                                `https://note-slide.com/view/${id}`,
+                                `View ${note?.title} on NoteSlide`
+                              )
+                            }
                           />
                         </div>
                       </div>
@@ -517,7 +524,7 @@ const ViewNote = () => {
                     <div className="flex flex-row items-center w-1/4 space-x-10">
                       <div className="flex items-center space-x-2">
                         <VisibilityIcon fontSize="large" />
-                        <span className="text-black font-bold">
+                        <span className="text-black font-medium">
                           {note.views}
                         </span>
                       </div>
@@ -551,7 +558,7 @@ const ViewNote = () => {
                                 }}
                               />
                             )}
-                            <span className="text-black font-bold">
+                            <span className="text-black font-medium">
                               {note.likes}
                             </span>
                           </>

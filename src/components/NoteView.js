@@ -7,6 +7,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
 import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
+import GroupIcon from "@mui/icons-material/Group";
 import { FaBell, FaUserCircle, FaBars, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
@@ -117,6 +118,10 @@ const NoteView = () => {
           />
           <CloudUploadIcon
             onClick={() => handleNavigation("/upload")}
+            className="w-1/2 text-gray-700 cursor-pointer"
+          />
+          <GroupIcon
+            onClick={() => handleNavigation("/favorites")}
             className="w-1/2 text-gray-700 cursor-pointer"
           />
           <BookmarkIcon
