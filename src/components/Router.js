@@ -16,6 +16,7 @@ import BuyAdCredit from "./BuyAdCredit";
 import VerifyEmail from "./VerifyEmail";
 import VerifyBusiness from "./VerifyBusiness";
 import PublicProfile from "./PublicProfile";
+import FollowingNotes from "./FollowingNotes";
 
 const MyRouter = () => {
   return (
@@ -34,6 +35,7 @@ const MyRouter = () => {
         <Route path="/admanager/" element={<AdManager />} />
         <Route path="/profile/" element={<Profile />} />
         <Route path="/favorites/" element={<FavoriteNotes />} />
+        <Route path="/following_notes/" element={<FollowingNotes />} />
         <Route path="/buyadcredit/" element={<BuyAdCredit />} />
         <Route path="/verify/:token/" element={<VerifyEmail />} />
         <Route path="/verify_business/:token/" element={<VerifyBusiness />} />

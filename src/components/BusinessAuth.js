@@ -3,6 +3,7 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import HomeIcon from "@mui/icons-material/Home";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
+import GroupIcon from "@mui/icons-material/Group";
 import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
 import { FaBell, FaUserCircle, FaBars, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -107,6 +108,10 @@ const BusinessAuth = () => {
             />
             <CloudUploadIcon
               onClick={() => handleNavigation("/upload")}
+              className="w-1/2 text-gray-700 cursor-pointer"
+            />
+            <GroupIcon
+              onClick={() => handleNavigation("/following_notes")}
               className="w-1/2 text-gray-700 cursor-pointer"
             />
             <BookmarkIcon

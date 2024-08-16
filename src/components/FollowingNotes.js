@@ -6,46 +6,38 @@ import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
-import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
 import GroupIcon from "@mui/icons-material/Group";
 import { FaBell, FaUserCircle, FaBars, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
-const NoteView = () => {
+const FollowingNotes = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [notes, setNotes] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [activeSearchTerm, setActiveSearchTerm] = useState("");
-  const user = JSON.parse(localStorage.getItem("user")) || null;
+  const [loading, setLoading] = useState(true); // State to track loading state
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/auth");
+    }
+  }, []);
 
   useEffect(() => {
     const fetchNotes = async () => {
-      setLoading(true); // Ensure loading state is set when fetching data
       try {
-        let response;
-        if (searchTerm) {
-          response = await fetch(
-            `https://noteslidebackend.onrender.com/api/search_notes/?search=${encodeURIComponent(
-              searchTerm
-            )}`
-          );
-        } else {
-          response = await fetch(
-            "https://noteslidebackend.onrender.com/api/notes/",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ user_id: user ? user.id : null }),
-            }
-          );
-        }
+        const fetchUrl =
+          "https://noteslidebackend.onrender.com/api/user_following_notes/";
+
+        const response = await fetch(fetchUrl, {
+          method: "POST",
+          body: JSON.stringify({ user_id: user.id }),
+        });
+
         const data = await response.json();
+        console.log(data);
         setNotes(data);
         setLoading(false); // Set loading to false after data is fetched
       } catch (error) {
@@ -55,52 +47,14 @@ const NoteView = () => {
     };
 
     fetchNotes();
-  }, [activeSearchTerm]);
+  }, []);
 
   const handleNavigation = (path) => {
     navigate(path);
   };
 
   const handleNoteClick = (id) => {
-    if (!user) {
-      navigate("/auth");
-    }
     navigate(`/view/${id}`);
-  };
-
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleShare = async (url, text) => {
-    const shareData = {
-      title: "NoteSlide",
-      text: text,
-      url: url,
-    };
-
-    if (navigator.share) {
-      try {
-        await navigator.share(shareData);
-        console.log("Content shared successfully");
-      } catch (error) {
-        console.error("Error sharing:", error);
-        fallbackToClipboard(shareData.url);
-      }
-    } else {
-      fallbackToClipboard(shareData.url);
-    }
-  };
-
-  const fallbackToClipboard = (url) => {
-    navigator.clipboard
-      .writeText(url)
-      .then(() => {
-        alert("Share Link copied");
-      })
-      .catch((err) => {
-        console.error("Failed to copy:", err);
-      });
   };
 
   return (
@@ -138,7 +92,7 @@ const NoteView = () => {
       {/* Main Content */}
       <div className="flex flex-col flex-1">
         {/* Top Navbar */}
-        <div className="flex items-center justify-between bg-white pt-8 pr-4 md:p-4 md:pt-8 sticky top-0 z-50">
+        <div className="flex items-center justify-between pt-8 bg-white pr-4 md:p-4 md:pt-8 sticky top-0 z-50">
           <div className="flex items-center">
             <FaBars
               className="w-8 h-8 text-gray-700 cursor-pointer"
@@ -159,9 +113,8 @@ const NoteView = () => {
           <div className="flex flex-row items-center flex-1 justify-center">
             <div className="flex items-center rounded-2xl border border-black w-2/3 md:w-2/5">
               <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setActiveSearchTerm(searchTerm);
+                onSubmit={() => {
+                  handleNavigation("/dashboard");
                 }}
                 className="w-full"
               >
@@ -169,8 +122,6 @@ const NoteView = () => {
                   type="text"
                   className="px-4 w-full py-2 rounded-2xl focus:outline-2"
                   placeholder="Search..."
-                  value={searchTerm}
-                  onChange={handleSearchChange}
                 />
                 <button type="submit" className="hidden">
                   Search
@@ -179,23 +130,12 @@ const NoteView = () => {
             </div>
             <FaSearch
               onClick={() => {
-                setActiveSearchTerm(searchTerm);
+                handleNavigation("/dashboard");
               }}
               className="cursor-pointer w-6 h-6 text-gray-700 mx-2 md:mx-4"
             />
           </div>
           <div className="flex items-center space-x-2 md:space-x-4 md:mr-12">
-            <div className="w-6 h-6 pr-2 md:mr-0 flex rounded-full items-center justify-end">
-              <GroupAddOutlinedIcon
-                onClick={() => {
-                  handleShare(
-                    "https://note-slide.com/dashboard/",
-                    `${user.name} invited you to NoteSlide`
-                  );
-                }}
-                className="text-gray-900 hover:cursor-pointer cursor-pointer"
-              />
-            </div>
             <div className="w-10 h-10 hidden md:flex rounded-full items-center justify-end">
               <TipsAndUpdatesOutlinedIcon
                 onClick={() => {
@@ -373,8 +313,8 @@ const NoteView = () => {
 };
 
 const NoteCard = ({ note, onClick }) => {
-  const isSmallScreen = useMediaQuery({ query: "(max-width: 600px)" });
   const controls = useAnimation();
+  const isSmallScreen = useMediaQuery({ query: "(max-width: 600px)" });
 
   const formatTextWithHyphens = (text, chunkSize = 15) => {
     // Split the text by spaces
@@ -406,7 +346,7 @@ const NoteCard = ({ note, onClick }) => {
         minWidth: isSmallScreen ? "" : "200px",
         zIndex: 1, // Ensure it's above the background card
       }}
-      className="relative cursor-pointer bg-zinc-300 h-60"
+      className="relative cursor-pointer bg-yellow-200 h-60"
       onHoverStart={() => controls.start({ x: 0, y: 0 })}
       onHoverEnd={() => controls.start({ x: -10, y: -10 })}
     >
@@ -444,4 +384,4 @@ const NoteCard = ({ note, onClick }) => {
   );
 };
 
-export default NoteView;
+export default FollowingNotes;

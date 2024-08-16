@@ -74,7 +74,7 @@ const FavoriteNotes = () => {
             className="w-1/2 text-gray-700 cursor-pointer"
           />
           <GroupIcon
-            onClick={() => handleNavigation("/favorites")}
+            onClick={() => handleNavigation("/following_notes")}
             className="w-1/2 text-gray-700 cursor-pointer"
           />
           <BookmarkIcon
