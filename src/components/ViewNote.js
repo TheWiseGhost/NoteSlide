@@ -389,7 +389,7 @@ const ViewNote = () => {
               <div className="flex flex-col">
                 {isSmallScreen ? (
                   <div className="flex flex-col flex-grow pb-4">
-                    <div className="text-center font-alata font-semibold text-4xl pt-4 pb-6">
+                    <div className="text-center font-alata font-semibold text-3xl pt-4 pb-6">
                       {note.short_title ? (
                         <h1>{note.short_title}</h1>
                       ) : (
@@ -484,7 +484,7 @@ const ViewNote = () => {
                         )}
                         <div>
                           <IconShare3
-                            className="text-gray-800 bg-gray-800"
+                            className="text-gray-800"
                             onClick={handleShare(
                               `https://note-slide.com/view/${id}`,
                               `View ${note?.title} on NoteSlide`
@@ -497,7 +497,7 @@ const ViewNote = () => {
                 ) : (
                   <div className="flex flex-grow md:ml-20 md:mr-16 flex-row justify-between">
                     <div
-                      className="flex flex-row w-1/5 space-x-4 cursor-pointer justify-center items-center"
+                      className="flex flex-row w-1/4 space-x-4 cursor-pointer justify-center items-center"
                       onClick={handleViewProfile}
                     >
                       <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
@@ -507,14 +507,14 @@ const ViewNote = () => {
                         {note.username}
                       </div>
                     </div>
-                    <div className="text-center font-alata font-semibold text-4xl pt-4 pb-8">
+                    <div className="text-center font-alata font-semibold text-3xl pt-4 pb-8">
                       {note.short_title ? (
                         <h1 className="">{note.short_title}</h1>
                       ) : (
                         <h1 className="">{note.title}</h1>
                       )}
                     </div>
-                    <div className="flex flex-row items-center w-1/5 space-x-10">
+                    <div className="flex flex-row items-center w-1/4 space-x-10">
                       <div className="flex items-center space-x-2">
                         <VisibilityIcon fontSize="large" />
                         <span className="text-black font-bold">
@@ -531,7 +531,7 @@ const ViewNote = () => {
                                 onClick={() => updateLike(false)}
                                 fontSize="large"
                                 sx={{
-                                  color: "blue",
+                                  color: "black",
                                   cursor: "pointer",
                                   "&:hover": {
                                     cursor: "pointer",
@@ -588,6 +588,17 @@ const ViewNote = () => {
                           )}
                         </>
                       )}
+                      <div>
+                        <IconShare3
+                          className="cursor-pointer text-gray-800"
+                          onClick={() =>
+                            handleShare(
+                              `https://note-slide.com/view/${id}`,
+                              `View ${note?.title} on NoteSlide`
+                            )
+                          }
+                        />
+                      </div>
                     </div>
                   </div>
                 )}
