@@ -6,6 +6,7 @@ import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
+import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
 import { FaBell, FaUserCircle, FaBars, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
@@ -68,6 +69,37 @@ const NoteView = () => {
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
+  };
+
+  const handleShare = async (url, text) => {
+    const shareData = {
+      title: "NoteSlide",
+      text: text,
+      url: url,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        console.log("Content shared successfully");
+      } catch (error) {
+        console.error("Error sharing:", error);
+        fallbackToClipboard(shareData.url);
+      }
+    } else {
+      fallbackToClipboard(shareData.url);
+    }
+  };
+
+  const fallbackToClipboard = (url) => {
+    navigator.clipboard
+      .writeText(url)
+      .then(() => {
+        alert("Share Link copied");
+      })
+      .catch((err) => {
+        console.error("Failed to copy:", err);
+      });
   };
 
   return (
@@ -148,6 +180,17 @@ const NoteView = () => {
             />
           </div>
           <div className="flex items-center space-x-2 md:space-x-4 md:mr-12">
+            <div className="w-6 h-6 pr-2 md:mr-0 flex rounded-full items-center justify-end">
+              <GroupAddOutlinedIcon
+                onClick={() => {
+                  handleShare(
+                    "https://note-slide.com/dashboard/",
+                    `${user.name} invited you to NoteSlide`
+                  );
+                }}
+                className="text-gray-900 hover:cursor-pointer cursor-pointer"
+              />
+            </div>
             <div className="w-10 h-10 hidden md:flex rounded-full items-center justify-end">
               <TipsAndUpdatesOutlinedIcon
                 onClick={() => {

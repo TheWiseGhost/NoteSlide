@@ -9,6 +9,7 @@ import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
+import { IconShare3 } from "@tabler/icons-react";
 import { FaBars, FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
@@ -107,6 +108,37 @@ const ViewNote = () => {
 
   const handleViewProfile = () => {
     navigate(`/public_profile/${note.username}`);
+  };
+
+  const handleShare = async (url, text) => {
+    const shareData = {
+      title: "NoteSlide",
+      text: text,
+      url: url,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        console.log("Content shared successfully");
+      } catch (error) {
+        console.error("Error sharing:", error);
+        fallbackToClipboard(shareData.url);
+      }
+    } else {
+      fallbackToClipboard(shareData.url);
+    }
+  };
+
+  const fallbackToClipboard = (url) => {
+    navigator.clipboard
+      .writeText(url)
+      .then(() => {
+        alert("Link copied");
+      })
+      .catch((err) => {
+        console.error("Failed to copy:", err);
+      });
   };
 
   return (
@@ -393,7 +425,7 @@ const ViewNote = () => {
                                   onClick={() => updateLike(false)}
                                   fontSize="large"
                                   sx={{
-                                    color: "blue",
+                                    color: "black",
                                     cursor: "pointer",
                                     "&:hover": {
                                       cursor: "pointer",
@@ -450,6 +482,15 @@ const ViewNote = () => {
                             )}
                           </>
                         )}
+                        <div>
+                          <IconShare3
+                            className="text-gray-800 bg-gray-800"
+                            onClick={handleShare(
+                              `https://note-slide.com/view/${id}`,
+                              `View ${note?.title} on NoteSlide`
+                            )}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>

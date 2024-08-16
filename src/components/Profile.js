@@ -131,11 +131,35 @@ const Profile = () => {
     navigate("/auth");
   };
 
-  const handleCopy = (name) => {
-    navigator.clipboard.writeText(
-      `https://note-slide.com/public_profile/${name}`
-    );
-    window.alert("Public Profile Link Copied");
+  const handleShare = async (url, text) => {
+    const shareData = {
+      title: "NoteSlide",
+      text: text,
+      url: url,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        console.log("Content shared successfully");
+      } catch (error) {
+        console.error("Error sharing:", error);
+        fallbackToClipboard(shareData.url);
+      }
+    } else {
+      fallbackToClipboard(shareData.url);
+    }
+  };
+
+  const fallbackToClipboard = (url) => {
+    navigator.clipboard
+      .writeText(url)
+      .then(() => {
+        alert("Link copied");
+      })
+      .catch((err) => {
+        console.error("Failed to copy:", err);
+      });
   };
 
   return (
@@ -260,7 +284,12 @@ const Profile = () => {
                 </div>
                 <h1 className="text-4xl font-outfit font-bold">{user?.name}</h1>
                 <OfflineShareIcon
-                  onClick={() => handleCopy(user?.name)}
+                  onClick={() =>
+                    handleShare(
+                      `https://note-slide.com/public_profile/${user?.name}`,
+                      `View my profile on NoteSlide`
+                    )
+                  }
                   className="w-6 h-6 text-gray-700 hover:cursor-pointer cursor-pointer"
                 />
               </div>
