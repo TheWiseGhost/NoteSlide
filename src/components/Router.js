@@ -18,6 +18,7 @@ import VerifyBusiness from "./VerifyBusiness";
 import PublicProfile from "./PublicProfile";
 import FollowingNotes from "./FollowingNotes";
 import Following from "./Following";
+import HowMoneyNotes from "./blog/HowMoneyNotes";
 
 const MyRouter = () => {
   return (
@@ -42,6 +43,11 @@ const MyRouter = () => {
         <Route path="/verify/:token/" element={<VerifyEmail />} />
         <Route path="/verify_business/:token/" element={<VerifyBusiness />} />
         <Route path="/public_profile/:username/" element={<PublicProfile />} />
+
+        <Route
+          path="/blog/how-to-make-money-with-notes/"
+          element={<HowMoneyNotes />}
+        />
       </Routes>
     </Router>
   );

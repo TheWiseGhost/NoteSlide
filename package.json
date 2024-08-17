@@ -20,8 +20,17 @@
     "react-responsive": "^10.0.0",
     "react-router-dom": "^6.26.0",
     "react-scripts": "5.0.1",
+    "react-snap": "^1.23.0",
     "react-typed": "^2.0.12",
     "web-vitals": "^2.1.4"
+  },
+  "reactSnap": {
+    "skipThirdPartyRequests": true,
+    "inlineCss": true,
+    "preloadLinks": true,
+    "include": [
+      "/blog/*"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
