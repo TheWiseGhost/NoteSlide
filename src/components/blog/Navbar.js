@@ -28,45 +28,41 @@ const Navbar = () => {
               className="text_button bg-white text-gray-700"
             >
               <span className="span-mother">
-                <span>I</span>
-                <span>n</span>
-                <span>f</span>
+                <span>H</span>
                 <span>o</span>
+                <span>m</span>
+                <span>e</span>
               </span>
               <span className="span-mother2">
-                <span>I</span>
-                <span>n</span>
-                <span>f</span>
+                <span>H</span>
                 <span>o</span>
+                <span>m</span>
+                <span>e</span>
               </span>
             </button>
             <button
               style={{ cursor: "pointer" }}
-              onClick={() => handleNavigation("/")}
+              onClick={() => handleNavigation("/auth")}
               className="text_button bg-white text-gray-700"
             >
               <span className="span-mother">
-                <span>R</span>
-                <span>e</span>
-                <span>v</span>
+                <span>L</span>
+                <span>o</span>
+                <span>g</span>
                 <span>i</span>
-                <span>e</span>
-                <span>w</span>
-                <span>s</span>
+                <span>n</span>
               </span>
               <span className="span-mother2">
-                <span>R</span>
-                <span>e</span>
-                <span>v</span>
+                <span>L</span>
+                <span>o</span>
+                <span>g</span>
                 <span>i</span>
-                <span>e</span>
-                <span>w</span>
-                <span>s</span>
+                <span>n</span>
               </span>
             </button>
             <button
               style={{ cursor: "pointer" }}
-              onClick={() => handleNavigation("/")}
+              onClick={() => handleNavigation("/upload")}
               className="text_button bg-white text-green-500"
             >
               <span className="span-mother">

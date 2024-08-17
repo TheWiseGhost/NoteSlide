@@ -623,7 +623,7 @@ tr:nth-child(even) {
 }
 
 .text_button .span-mother2 span {
-  transform: translateY(-1.2em);
+  transform: translateY(-1.3em);
 }
 
 .text_button:hover .span-mother2 span {
