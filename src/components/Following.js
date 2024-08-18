@@ -333,8 +333,10 @@ const Following = () => {
                         ))}
                       </>
                     ) : (
-                      <div className="font-outfit text-gray-700">
-                        You are currently not following anyone
+                      <div className="w-full h-60 flex justify-center items-center text-center">
+                        <p className="font-outfit text-gray-700">
+                          You are currently not following anyone
+                        </p>
                       </div>
                     )}
                   </div>
@@ -379,7 +381,11 @@ const Following = () => {
                       ))}
                     </>
                   ) : (
-                    <div></div>
+                    <div className="w-full h-60 flex justify-center items-center text-center">
+                      <p className="font-outfit text-gray-700">
+                        You are currently not following anyone
+                      </p>
+                    </div>
                   )}
                 </div>
               )}

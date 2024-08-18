@@ -303,6 +303,13 @@ const FavoriteNotes = () => {
                   onClick={() => handleNoteClick(note._id)}
                 />
               ))}
+              {notes.length == 0 && (
+                <div className="w-full h-60 flex justify-center items-center text-center">
+                  <p className="font-outfit text-gray-700">
+                    You have no Favorited Notes
+                  </p>
+                </div>
+              )}
             </div>
           )}
         </div>
