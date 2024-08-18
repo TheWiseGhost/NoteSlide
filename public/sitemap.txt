@@ -17,4 +17,4 @@ https://note-slide.com/buyadcredit/
 https://note-slide.com/verify/:token/
 https://note-slide.com/verify_business/:token/
 https://note-slide.com/public_profile/:username/
-https://note-slide/blog/how-to-make-money-with-notes
+https://note-slide.com/blog/how-to-make-money-with-notes
