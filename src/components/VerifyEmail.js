@@ -19,7 +19,7 @@ const VerifyEmail = () => {
         const data = await response.json();
         if (response.ok) {
           setMessage(data.message);
-          window.alert(message);
+          window.alert("Succesfully verified! Please login");
           navigate("/auth");
         } else {
           setMessage(data.error);

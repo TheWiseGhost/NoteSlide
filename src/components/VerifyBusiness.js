@@ -20,9 +20,9 @@ const VerifyBusiness = () => {
         if (response.ok) {
           setMessage(data.message);
           window.alert(
-            "Business Email verified successfully. You can now log in."
+            "Business Email verified successfully. Check your email for more instructions."
           );
-          navigate("/auth");
+          navigate("/dashboard");
         } else {
           setMessage(data.error);
           window.alert(message);
