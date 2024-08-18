@@ -64,8 +64,11 @@ const BusinessAuth = () => {
             "Successfully signed up, please check your email to verify your business account"
           );
         } else {
-          localStorage.setItem("business_user", JSON.stringify(data.user));
-          navigate("/business_main");
+          window.alert(
+            "Your request to be a business has been recieved. Please check your Gmail and fill out the questionare to get free Ad Credit and get started with NoteSlide for Business."
+          );
+          // localStorage.setItem("business_user", JSON.stringify(data.user));
+          // navigate("/business_main");
         }
       } else {
         setError(data.error);

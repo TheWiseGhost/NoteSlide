@@ -156,7 +156,7 @@ const NoteView = () => {
               Note Slide
             </button>
           </div>
-          <div className="flex flex-row items-center flex-1 justify-center pl-0 md:pl-6">
+          <div className="flex flex-row items-center flex-1 justify-center ml-0 md:ml-12">
             <div className="flex items-center rounded-2xl border border-black w-2/3 md:w-2/5">
               <form
                 onSubmit={(e) => {

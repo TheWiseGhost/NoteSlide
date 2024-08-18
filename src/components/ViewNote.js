@@ -230,7 +230,7 @@ const ViewNote = () => {
                 className="cursor-pointer w-6 h-6 text-gray-700 mx-2 md:mx-4"
               />
             </div>
-            <div className="flex items-center space-x-2 md:space-x-4">
+            <div className="flex items-center space-x-2 md:space-x-4 md:mr-12">
               <div className="w-10 h-10 hidden md:flex rounded-full items-center justify-end">
                 <TipsAndUpdatesOutlinedIcon
                   onClick={() => {

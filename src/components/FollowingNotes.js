@@ -325,7 +325,7 @@ const FollowingNotes = () => {
                     ))}
                   </>
                 ) : (
-                  <div className="w-full h-full flex justify-center items-center text-center">
+                  <div className="w-full h-60 flex justify-center items-center text-center">
                     <p className="font-outfit text-gray-700">
                       Follow people to see followed notes
                     </p>

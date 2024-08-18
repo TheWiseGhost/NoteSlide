@@ -300,7 +300,7 @@ const PublicProfile = () => {
                 <div className="text-md md:text-lg font-outfit">Views</div>
                 <div className="text-lg md:text-2xl justify-center font-josefin font-bold">
                   {statLoading ? (
-                    <div className="loader"></div>
+                    <div className="loader ml-2"></div>
                   ) : (
                     <p>{stats?.views}</p>
                   )}
@@ -310,7 +310,7 @@ const PublicProfile = () => {
                 <div className="text-md md:text-lg font-outfit">Likes</div>
                 <div className="text-lg md:text-2xl justify-center font-josefin font-bold">
                   {statLoading ? (
-                    <div className="loader"></div>
+                    <div className="loader ml-2"></div>
                   ) : (
                     <p>{stats?.likes}</p>
                   )}
