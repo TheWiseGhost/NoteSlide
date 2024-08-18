@@ -56,111 +56,88 @@ const HowMoneyNotes = () => {
               </a>
               <p className="text-lg">
                 NoteSlide is a platform designed for students to upload and
-                share their notes. Users can browse, purchase, or download
-                notes, making it a versatile marketplace for academic content.
+                share their notes. Users can view notes after watching an Ad,
+                letting creators earn the ad revenue and users get free notes
               </p>
               <div className="flex flex-row space-x-12 pt-6">
-                <div>
-                  <h1 className="text-xl text-center font-josefin">Pros</h1>
-                  <ul className="list-disc list-inside mt-2">
-                    <li>
-                      Easy to use and set up, wide audience, secure payment
-                      methods.
-                    </li>
-                    <li>
-                      Easy to use and set up, wide audience, secure payment
-                      methods.
-                    </li>
+                <div className="w-full">
+                  <h1 className="text-xl font-josefin">Pros</h1>
+                  <ul className="list-disc mt-2">
+                    <li>Ability to build a loyal following</li>
+                    <li>Easy to use and set up without much regulation</li>
+                    <li>Full Transperancy with views to pay ratio</li>
                   </ul>
                 </div>
-                <div>
-                  <h1 className="text-xl text-center font-josefin">Cons</h1>
-                  <ul className="list-disc list-inside mt-2">
+                <div className="w-full">
+                  <h1 className="text-xl font-josefin">Cons</h1>
+                  <ul className="list-disc mt-2">
+                    <li>Small starter pay for creators</li>
                     <li>
-                      Easy to use and set up, wide audience, secure payment
-                      methods.
-                    </li>
-                    <li>
-                      Easy to use and set up, wide audience, secure payment
-                      methods.
+                      New platform as of 2024 so userbase needs growth before
+                      creators can make Youtube like revenue.
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div className="space-y-4 pt-8">
+            <div className="space-y-4 pt-20">
               <a className="text-2xl font-josefin font-semibold">
-                1. NoteSlide
+                2. StudySoup
               </a>
               <p className="text-lg">
-                NoteSlide is a platform designed for students to upload and
-                share their notes. Users can browse, purchase, or download
-                notes, making it a versatile marketplace for academic content.
+                StudySoup allows students to sell their class notes and study
+                guides. The platform also offers tutoring services, making it a
+                comprehensive academic tool.
               </p>
               <div className="flex flex-row space-x-12 pt-6">
-                <div>
-                  <h1 className="text-xl text-center font-josefin">Pros</h1>
-                  <ul className="list-disc list-inside mt-2">
+                <div className="w-full">
+                  <h1 className="text-xl font-josefin">Pros</h1>
+                  <ul className="list-disc mt-2">
+                    <li>Get direct payments for your notes</li>
                     <li>
-                      Easy to use and set up, wide audience, secure payment
-                      methods.
-                    </li>
-                    <li>
-                      Easy to use and set up, wide audience, secure payment
-                      methods.
+                      Suited to different educational material other than notes
                     </li>
                   </ul>
                 </div>
-                <div>
-                  <h1 className="text-xl text-center font-josefin">Cons</h1>
-                  <ul className="list-disc list-inside mt-2">
+                <div className="w-full">
+                  <h1 className="text-xl font-josefin">Cons</h1>
+                  <ul className="list-disc mt-2">
+                    <li>Users are forced through a paywall</li>
                     <li>
-                      Easy to use and set up, wide audience, secure payment
-                      methods.
-                    </li>
-                    <li>
-                      Easy to use and set up, wide audience, secure payment
-                      methods.
+                      A small audience (as is the nature of a paid-per-view
+                      platform)
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div className="space-y-4 pt-8">
-              <a className="text-2xl font-josefin font-semibold">
-                1. NoteSlide
-              </a>
+            <div className="space-y-4 pt-20">
+              <a className="text-2xl font-josefin font-semibold">3. Stuvia</a>
               <p className="text-lg">
-                NoteSlide is a platform designed for students to upload and
-                share their notes. Users can browse, purchase, or download
-                notes, making it a versatile marketplace for academic content.
+                Stuvia offers a marketplace for academic notes, flashcards, and
+                study guides. It focuses on high-quality content and detailed
+                notes.
               </p>
               <div className="flex flex-row space-x-12 pt-6">
-                <div>
-                  <h1 className="text-xl text-center font-josefin">Pros</h1>
-                  <ul className="list-disc list-inside mt-2">
-                    <li>
-                      Easy to use and set up, wide audience, secure payment
-                      methods.
-                    </li>
-                    <li>
-                      Easy to use and set up, wide audience, secure payment
-                      methods.
-                    </li>
+                <div className="w-full">
+                  <h1 className="text-xl font-josefin">Pros</h1>
+                  <ul className="list-disc mt-2">
+                    <li>Marketplace style that some may prefer</li>
+                    <li>Geared towards high-quality and very niche notes</li>
                   </ul>
                 </div>
-                <div>
-                  <h1 className="text-xl text-center font-josefin">Cons</h1>
-                  <ul className="list-disc list-inside mt-2">
+                <div className="w-full">
+                  <h1 className="text-xl font-josefin">Cons</h1>
+                  <ul className="list-disc mt-2">
                     <li>
-                      Easy to use and set up, wide audience, secure payment
-                      methods.
+                      Very hard to break into the marketplace without ads and
+                      extensive
                     </li>
                     <li>
-                      Easy to use and set up, wide audience, secure payment
-                      methods.
+                      Paywalls and scammers have made users apprehensive of
+                      using the site
                     </li>
                   </ul>
                 </div>
@@ -173,27 +150,29 @@ const HowMoneyNotes = () => {
             </h2>
             <ul className="list-disc mt-2 space-y-12 text-lg">
               <li>
-                <strong className="font-josefin text-xl">
-                  Quality Over Quantity:
-                </strong>{" "}
+                <p className="font-josefin text-xl">Quality Over Quantity:</p>{" "}
                 Focus on creating detailed, clear, and well-organized notes.
+                Ultimately, the top 5% of notes will get 95% of audience. It's
+                crucial that you stay focused on your notes and make it be at
+                the top of it's niche, even if the niche is small.
               </li>
               <li>
-                <strong className="font-josefin text-xl">
-                  Market Research:
-                </strong>{" "}
-                Understand what’s in demand and look for popular topics.
+                <p className="font-josefin text-xl">Market Research:</p>{" "}
+                Understand what’s in demand and look for popular topics. Start
+                off by posting on Free platforms and understanding your note's
+                performace before moving onto paid platforms
               </li>
               <li>
-                <strong className="font-josefin text-xl">Promotion:</strong> Use
-                social media, student forums, and campus groups to promote your
-                notes.
+                <p className="font-josefin text-xl">Promotion:</p> Use social
+                media, student forums, and campus groups to promote your notes.
+                Try to build a following or a group that can boost your notes
+                and validate your credibilty.
               </li>
               <li>
-                <strong className="font-josefin text-xl">
-                  Regular Updates:
-                </strong>{" "}
-                Keep your notes updated and relevant to current course material.
+                <p className="font-josefin text-xl">Regular Updates:</p> Keep
+                your notes updated and relevant to current course material.
+                Connect with new students and ask them to provide feedback and
+                small updates they made
               </li>
             </ul>
           </section>
