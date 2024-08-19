@@ -614,14 +614,14 @@ const ViewNote = () => {
                 {isSmallScreen && (
                   <div className="flex flex-col items-center pt-4">
                     <p className="font-outfit text-sm">
-                      Note not supported on mobile, only a preview can be shown
+                      Note not supported, only a preview can be shown
                     </p>
                     <a
                       href={note.s3_path}
                       download
                       className="underline text-lg pt-2 pb-4"
                     >
-                      Download PDF
+                      Open Full Note
                     </a>
                   </div>
                 )}
