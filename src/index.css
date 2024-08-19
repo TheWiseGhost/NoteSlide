@@ -8,6 +8,11 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* Hide scrollbar for WebKit-based browsers on mobile devices */
 @media (max-width: 768px) {
   *::-webkit-scrollbar {

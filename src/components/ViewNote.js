@@ -394,7 +394,7 @@ const ViewNote = () => {
               <div className="flex flex-col">
                 {isSmallScreen ? (
                   <div className="flex flex-col flex-grow pb-4">
-                    <div className="text-center font-josefin font-semibold text-3xl pt-6 pb-6">
+                    <div className="text-center font-josefin font-medium text-3xl pt-8 pb-6">
                       {note.short_title ? (
                         <h1>{note.short_title}</h1>
                       ) : (
