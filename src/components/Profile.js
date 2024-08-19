@@ -278,7 +278,7 @@ const Profile = () => {
             <div
               className={`w-full md:w-2/5 ${
                 sidebarOpen ? "md:pl-32" : "md:pl-16"
-              } flex flex-row justify-between items-start p-8`}
+              } flex flex-row justify-between items-start px-3 md:px-8 py-8`}
             >
               <div className="flex flex-row space-x-4 items-center">
                 <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
@@ -287,7 +287,9 @@ const Profile = () => {
                     className="w-6 h-6 text-gray-700 hover:cursor-pointer cursor-pointer"
                   />
                 </div>
-                <h1 className="text-4xl font-outfit font-bold">{user?.name}</h1>
+                <h1 className="text-xl md:text-4xl font-outfit font-bold">
+                  {user?.name}
+                </h1>
                 <OfflineShareIcon
                   onClick={() =>
                     handleShare(
@@ -295,7 +297,7 @@ const Profile = () => {
                       `View my profile on NoteSlide`
                     )
                   }
-                  className="w-6 h-6 text-gray-700 hover:cursor-pointer cursor-pointer"
+                  className="size-1 md:size-6 text-gray-700 hover:cursor-pointer cursor-pointer"
                 />
               </div>
               <div
@@ -306,10 +308,10 @@ const Profile = () => {
               </div>
             </div>
             {/* Right Section */}
-            <div className="w-full md:w-3/5 md:mx-8 flex flex-row justify-around items-center md:p-4 md:pt-8">
+            <div className="w-full md:w-3/5 md:mx-8 flex flex-row justify-around items-center ml-[-12px] md:ml-0 md:p-4 md:pt-8">
               <div className="py-4 px-4 md:px-10 rounded border-gray-400 border-2 text-center">
                 <div className="text-md md:text-lg font-outfit">Views</div>
-                <div className="text-lg md:text-2xl justify-center font-josefin font-bold">
+                <div className="text-md md:text-2xl justify-center font-josefin font-bold">
                   {statLoading ? (
                     <div className="loader ml-2"></div>
                   ) : (
@@ -319,7 +321,7 @@ const Profile = () => {
               </div>
               <div className="py-4 px-4 md:px-10 rounded border-gray-400 border-2 text-center">
                 <div className="text-md md:text-lg font-outfit">Likes</div>
-                <div className="text-lg md:text-2xl justify-center font-josefin font-bold">
+                <div className="text-md md:text-2xl justify-center font-josefin font-bold">
                   {statLoading ? (
                     <div className="loader ml-2"></div>
                   ) : (
@@ -329,21 +331,21 @@ const Profile = () => {
               </div>
               <div className="py-4 px-4 md:px-10 rounded border-gray-400 border-2 text-center">
                 <div className="text-md md:text-lg font-outfit">Earned</div>
-                <div className="text-lg md:text-2xl font-josefin font-bold">
+                <div className="text-md md:text-2xl font-josefin font-bold">
                   {statLoading ? (
                     <div className="loader ml-4"></div>
                   ) : (
-                    <p>{user?.earned}</p>
+                    <p>${user?.earned}</p>
                   )}
                 </div>
               </div>
               <div className="py-4 px-4 md:px-10 rounded border-gray-400 border-2 text-center">
                 <div className="text-md md:text-lg font-outfit">Balance</div>
-                <div className="text-lg md:text-2xl font-josefin font-bold">
+                <div className="text-md md:text-2xl font-josefin font-bold">
                   {statLoading ? (
                     <div className="loader ml-6"></div>
                   ) : (
-                    <p>{user?.balance}</p>
+                    <p>${user?.balance}</p>
                   )}
                 </div>
               </div>

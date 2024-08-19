@@ -146,7 +146,7 @@ const ViewNote = () => {
     <>
       {note && (
         <Helmet>
-          <title>{note.title} | NoteSlide</title>
+          <title>{`${note.title} | NoteSlide`}</title>
           <meta
             name="description"
             content={`${note.description}. This note called ${note.title} was published to NoteSlide by ${note.username} and relates to the interest ${note.interest}.`}
@@ -404,16 +404,16 @@ const ViewNote = () => {
                     <div className="flex flex-row justify-between">
                       <div
                         onClick={handleViewProfile}
-                        className="flex flex-row w-1/3 space-x-2 cursor-pointer justify-center items-center hover:cursor-pointer"
+                        className="flex flex-row w-1/3 space-x-2 cursor-pointer justify-start items-center hover:cursor-pointer"
                       >
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
-                          <FaUserCircle className="w-6 h-6 text-gray-700" />
+                        <div className="size-4 bg-gray-300 rounded-full flex items-center justify-center">
+                          <FaUserCircle className="size-3 text-gray-700" />
                         </div>
                         <div className="justify-center font-outfit">
                           {note.username}
                         </div>
                       </div>
-                      <div className="flex flex-row items-center justify-center w-2/3 space-x-8">
+                      <div className="flex flex-row items-center justify-center w-2/3 space-x-6 pr-4">
                         <div className="flex items-center space-x-2">
                           <VisibilityIcon fontSize="medium" />
                           <span className="text-black font-medium">
@@ -504,7 +504,7 @@ const ViewNote = () => {
                 ) : (
                   <div className="flex flex-grow md:ml-20 md:mr-16 flex-row justify-between">
                     <div
-                      className="flex flex-row w-1/4 space-x-4 cursor-pointer justify-center items-center"
+                      className="flex flex-row w-1/4 space-x-4 cursor-pointer justify-start pl-4 items-center"
                       onClick={handleViewProfile}
                     >
                       <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
@@ -612,13 +612,25 @@ const ViewNote = () => {
 
                 {/* PDF Viewer */}
                 <div className="bg-gray-200 flex flex-grow h-screen md:ml-16 md:mr-10">
-                  <iframe
-                    src={note.s3_path}
-                    width="100%"
-                    height="100%"
-                    style={{ border: "none" }}
-                    title="PDF Viewer"
-                  />
+                  {isSmallScreen ? (
+                    <object
+                      data={note.s3_path}
+                      type="application/pdf"
+                      frameborder="0"
+                      width="100%"
+                      height="600px"
+                    >
+                      <embed src={note.s3_path} width="100%" height="600px" />
+                    </object>
+                  ) : (
+                    <iframe
+                      src={note.s3_path}
+                      width={`100%`}
+                      height={`100%`}
+                      style={{ border: "none" }}
+                      title="PDF Viewer"
+                    />
+                  )}
                 </div>
               </div>
             )}

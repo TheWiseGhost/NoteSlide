@@ -257,7 +257,7 @@ const PublicProfile = () => {
             <div
               className={`w-full md:w-2/5 ${
                 sidebarOpen ? "md:pl-32" : "md:pl-16"
-              } flex flex-row justify-between items-start p-8`}
+              } flex flex-row justify-between items-start px-3 md:px-8 py-8`}
             >
               <div className="flex flex-row space-x-4 items-center">
                 <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
@@ -270,8 +270,8 @@ const PublicProfile = () => {
                 <OfflineShareIcon
                   onClick={() =>
                     handleShare(
-                      `https://note-slide.com/public_profile/${user?.name}`,
-                      `View my profile on NoteSlide`
+                      `https://note-slide.com/public_profile/${username}`,
+                      `View ${username}'s profile on NoteSlide`
                     )
                   }
                   className="w-6 h-6 text-gray-700 hover:cursor-pointer cursor-pointer"
@@ -295,7 +295,7 @@ const PublicProfile = () => {
               )}
             </div>
             {/* Right Section */}
-            <div className="w-full md:w-3/5 md:mx-8 flex flex-row justify-around items-center md:p-4 md:pt-8">
+            <div className="w-full md:w-3/5 md:mx-8 flex flex-row justify-around items-center ml-[-12px] md:ml-0 md:p-4 md:pt-8">
               <div className="py-4 px-4 md:px-10 rounded border-gray-400 border-2 text-center">
                 <div className="text-md md:text-lg font-outfit">Views</div>
                 <div className="text-lg md:text-2xl justify-center font-josefin font-bold">

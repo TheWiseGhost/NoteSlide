@@ -2,7 +2,7 @@ import MyRouter from "./components/Router";
 
 function App() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <MyRouter />
     </div>
   );
