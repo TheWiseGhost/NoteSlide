@@ -266,7 +266,9 @@ const PublicProfile = () => {
                     className="w-6 h-6 text-gray-700 hover:cursor-pointer cursor-pointer"
                   />
                 </div>
-                <h1 className="text-4xl font-outfit font-bold">{username}</h1>
+                <h1 className="text-xl md:text-4xl font-outfit font-bold">
+                  {username}
+                </h1>
                 <OfflineShareIcon
                   onClick={() =>
                     handleShare(

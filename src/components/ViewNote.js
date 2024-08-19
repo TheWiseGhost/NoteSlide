@@ -394,7 +394,7 @@ const ViewNote = () => {
               <div className="flex flex-col">
                 {isSmallScreen ? (
                   <div className="flex flex-col flex-grow pb-4">
-                    <div className="text-center font-alata font-semibold text-3xl pt-6 pb-6">
+                    <div className="text-center font-josefin font-semibold text-3xl pt-6 pb-6">
                       {note.short_title ? (
                         <h1>{note.short_title}</h1>
                       ) : (
@@ -406,8 +406,8 @@ const ViewNote = () => {
                         onClick={handleViewProfile}
                         className="flex flex-row w-1/3 space-x-2 cursor-pointer justify-start items-center hover:cursor-pointer"
                       >
-                        <div className="size-4 bg-gray-300 rounded-full flex items-center justify-center">
-                          <FaUserCircle className="size-3 text-gray-700" />
+                        <div className="size-7 bg-gray-300 rounded-full flex items-center justify-center">
+                          <FaUserCircle className="size-5 text-gray-700" />
                         </div>
                         <div className="justify-center font-outfit">
                           {note.username}
@@ -514,7 +514,7 @@ const ViewNote = () => {
                         {note.username}
                       </div>
                     </div>
-                    <div className="text-center font-alata font-semibold text-3xl pt-4 pb-8">
+                    <div className="text-center font-josefin flex items-baseline font-semibold text-3xl pt-4 pb-8">
                       {note.short_title ? (
                         <h1 className="">{note.short_title}</h1>
                       ) : (
@@ -611,26 +611,28 @@ const ViewNote = () => {
                 )}
 
                 {/* PDF Viewer */}
-                <div className="bg-gray-200 flex flex-grow h-screen md:ml-16 md:mr-10">
-                  {isSmallScreen ? (
-                    <object
-                      data={note.s3_path}
-                      type="application/pdf"
-                      frameborder="0"
-                      width="100%"
-                      height="600px"
+                {isSmallScreen && (
+                  <div className="flex flex-col items-center pt-4">
+                    <p className="font-outfit text-sm">
+                      Note not supported on mobile, only a preview can be shown
+                    </p>
+                    <a
+                      href={note.s3_path}
+                      download
+                      className="underline text-lg pt-2 pb-4"
                     >
-                      <embed src={note.s3_path} width="100%" height="600px" />
-                    </object>
-                  ) : (
-                    <iframe
-                      src={note.s3_path}
-                      width={`100%`}
-                      height={`100%`}
-                      style={{ border: "none" }}
-                      title="PDF Viewer"
-                    />
-                  )}
+                      Download PDF
+                    </a>
+                  </div>
+                )}
+                <div className="bg-gray-200 flex flex-grow h-screen md:ml-16 md:mr-10">
+                  <iframe
+                    src={note.s3_path}
+                    width={`100%`}
+                    height={`100%`}
+                    style={{ border: "none", scrollbarWidth: "thin" }}
+                    title="PDF Viewer"
+                  />
                 </div>
               </div>
             )}
