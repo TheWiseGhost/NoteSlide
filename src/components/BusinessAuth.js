@@ -4,7 +4,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import GroupIcon from "@mui/icons-material/Group";
-import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import { FaBell, FaUserCircle, FaBars, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -64,11 +64,8 @@ const BusinessAuth = () => {
             "Successfully signed up, please check your email to verify your business account"
           );
         } else {
-          window.alert(
-            "Your request to be a business has been recieved. Please check your Gmail and fill out the questionare to get free Ad Credit and get started with NoteSlide for Business."
-          );
-          // localStorage.setItem("business_user", JSON.stringify(data.user));
-          // navigate("/business_main");
+          localStorage.setItem("business_user", JSON.stringify(data.user));
+          navigate("/business_main");
         }
       } else {
         setError(data.error);
@@ -176,7 +173,7 @@ const BusinessAuth = () => {
             </div>
             <div className="flex items-center space-x-2 md:space-x-4 md:mr-12">
               <div className="w-10 h-10 hidden md:flex rounded-full items-center justify-end">
-                <TipsAndUpdatesOutlinedIcon
+                <ChatOutlinedIcon
                   onClick={() => {
                     window.open(
                       "https://docs.google.com/forms/d/e/1FAIpQLSeq_g58sbOCDxyyfY5-mCDt1PpFvNErzFtQFDFZzg9BA3mpqA/viewform",
@@ -204,7 +201,13 @@ const BusinessAuth = () => {
           </div>
 
           {/* Auth */}
-          <div className="wrapper h-screen pt-20">
+          <div>
+            <h1 className="font-outfit text-md text-center text-black pt-4">
+              Instantly get $10 of Ad Credit when you sign up (no strings
+              attached) - expires in 2 days!
+            </h1>
+          </div>
+          <div className="wrapper min-h-screen">
             <div className="card-switch pt-0">
               <label className="switch">
                 <input

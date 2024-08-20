@@ -4,7 +4,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
-import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import GroupIcon from "@mui/icons-material/Group";
 import { FaBell, FaUserCircle, FaBars, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -428,7 +428,7 @@ const AdManager = () => {
           </div>
           <div className="flex items-center space-x-4 mr-12">
             <div className="w-10 h-10 hidden md:flex rounded-full items-center justify-end">
-              <TipsAndUpdatesOutlinedIcon
+              <ChatOutlinedIcon
                 onClick={() => {
                   window.open(
                     "https://docs.google.com/forms/d/e/1FAIpQLSeq_g58sbOCDxyyfY5-mCDt1PpFvNErzFtQFDFZzg9BA3mpqA/viewform",

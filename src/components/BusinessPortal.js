@@ -4,7 +4,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
-import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import GroupIcon from "@mui/icons-material/Group";
 import { FaBell, FaUserCircle, FaBars, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -173,7 +173,7 @@ const BusinessPortal = () => {
           </div>
           <div className="flex items-center space-x-2 md:space-x-4 md:mr-12">
             <div className="w-10 h-10 hidden md:flex rounded-full items-center justify-end">
-              <TipsAndUpdatesOutlinedIcon
+              <ChatOutlinedIcon
                 onClick={() => {
                   window.open(
                     "https://docs.google.com/forms/d/e/1FAIpQLSeq_g58sbOCDxyyfY5-mCDt1PpFvNErzFtQFDFZzg9BA3mpqA/viewform",
@@ -319,14 +319,7 @@ const BusinessPortal = () => {
                   onChange={(e) => setDomain(e.target.value)}
                 />
               </div>
-              <div className="mb-4">
-                <label className="block mb-2">Payment Info</label>
-                <input
-                  type="text"
-                  className="border p-2 w-full font-alata"
-                  placeholder="Payment Info"
-                />
-              </div>
+
               <div className="w-3/5 mx-auto">
                 <button
                   onClick={(e) => editBusiness(e)}

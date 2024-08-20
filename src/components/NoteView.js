@@ -5,7 +5,7 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
-import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
 import GroupIcon from "@mui/icons-material/Group";
 import { FaBell, FaUserCircle, FaBars, FaSearch } from "react-icons/fa";
@@ -197,7 +197,7 @@ const NoteView = () => {
               />
             </div>
             <div className="w-10 h-10 hidden md:flex rounded-full items-center justify-end">
-              <TipsAndUpdatesOutlinedIcon
+              <ChatOutlinedIcon
                 onClick={() => {
                   window.open(
                     "https://docs.google.com/forms/d/e/1FAIpQLSeq_g58sbOCDxyyfY5-mCDt1PpFvNErzFtQFDFZzg9BA3mpqA/viewform",

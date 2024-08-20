@@ -3,7 +3,7 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import HomeIcon from "@mui/icons-material/Home";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
-import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import GroupIcon from "@mui/icons-material/Group";
 import { FaBars, FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -135,7 +135,7 @@ const BuyAdCredit = () => {
           </div>
           <div className="flex items-center space-x-2 md:space-x-4 md:mr-12">
             <div className="w-10 h-10 hidden md:flex rounded-full items-center justify-end">
-              <TipsAndUpdatesOutlinedIcon
+              <ChatOutlinedIcon
                 onClick={() => {
                   window.open(
                     "https://docs.google.com/forms/d/e/1FAIpQLSeq_g58sbOCDxyyfY5-mCDt1PpFvNErzFtQFDFZzg9BA3mpqA/viewform",
@@ -173,11 +173,17 @@ const BuyAdCredit = () => {
               text={"Get your feet wet"}
               price={"5"}
               loading={loading}
+              // handleBuy={() => {
+              //   window.open(
+              //     "https://buy.stripe.com/test_8wMdTe5vW6endcQ6op",
+              //     "_blank"
+              //   );
+              // }}
               handleBuy={() => {
-                window.open(
-                  "https://buy.stripe.com/test_8wMdTe5vW6endcQ6op",
-                  "_blank"
+                window.alert(
+                  "Hey! Since your one of our first businesses, we want to send you a gift. Please shoot us a dm on Twitter so we can give you 50% discount on any purchase"
                 );
+                window.open("https://x.com/note_slide", "_blank");
               }}
             />
             <AdCreditCard
@@ -185,11 +191,17 @@ const BuyAdCredit = () => {
               text={"First campaign?"}
               price={"20"}
               loading={loading}
+              // handleBuy={() => {
+              //   window.open(
+              //     "https://buy.stripe.com/test_eVag1m0bC5ajgp2fZ0",
+              //     "_blank"
+              //   );
+              // }}
               handleBuy={() => {
-                window.open(
-                  "https://buy.stripe.com/test_eVag1m0bC5ajgp2fZ0",
-                  "_blank"
+                window.alert(
+                  "Hey! Since your one of our first businesses, we want to send you a gift. Please shoot us a dm on Twitter so we can give you 50% discount on any purchase"
                 );
+                window.open("https://x.com/note_slide", "_blank");
               }}
             />
             <AdCreditCard
@@ -197,11 +209,17 @@ const BuyAdCredit = () => {
               text={"Standard Budget to Grow"}
               price={"50"}
               loading={loading}
+              // handleBuy={() => {
+              //   window.open(
+              //     "https://buy.stripe.com/test_28og1m1fG46f4GkbIL",
+              //     "_blank"
+              //   );
+              // }}
               handleBuy={() => {
-                window.open(
-                  "https://buy.stripe.com/test_28og1m1fG46f4GkbIL",
-                  "_blank"
+                window.alert(
+                  "Hey! Since your one of our first businesses, we want to send you a gift. Please shoot us a dm on Twitter so we can give you 50% discount on any purchase"
                 );
+                window.open("https://x.com/note_slide", "_blank");
               }}
             />
             <AdCreditCard
@@ -209,11 +227,17 @@ const BuyAdCredit = () => {
               text={"Spend Money to Make Money"}
               price={"100"}
               loading={loading}
+              // handleBuy={() => {
+              //   window.open(
+              //     "https://buy.stripe.com/test_aEUbL65vWbyH5Ko7sw",
+              //     "_blank"
+              //   );
+              // }}
               handleBuy={() => {
-                window.open(
-                  "https://buy.stripe.com/test_aEUbL65vWbyH5Ko7sw",
-                  "_blank"
+                window.alert(
+                  "Hey! Since your one of our first businesses, we want to send you a gift. Please shoot us a dm on Twitter so we can give you 50% discount on any purchase"
                 );
+                window.open("https://x.com/note_slide", "_blank");
               }}
             />
             <AdCreditCard
@@ -221,11 +245,17 @@ const BuyAdCredit = () => {
               text={"The Money Machine that keeps printing"}
               price={"500"}
               loading={loading}
+              // handleBuy={() => {
+              //   window.open(
+              //     "https://buy.stripe.com/test_cN23eA1fGfOXc8M6ot",
+              //     "_blank"
+              //   );
+              // }}
               handleBuy={() => {
-                window.open(
-                  "https://buy.stripe.com/test_cN23eA1fGfOXc8M6ot",
-                  "_blank"
+                window.alert(
+                  "Hey! Since your one of our first businesses, we want to send you a gift. Please shoot us a dm on Twitter so we can give you 50% discount on any purchase"
                 );
+                window.open("https://x.com/note_slide", "_blank");
               }}
             />
             <AdCreditCard
@@ -233,11 +263,17 @@ const BuyAdCredit = () => {
               text={"There's no stopping you from going to the top"}
               price={"1500"}
               loading={loading}
+              // handleBuy={() => {
+              //   window.open(
+              //     "https://buy.stripe.com/test_4gwaH26A0eKTgp2aEK",
+              //     "_blank"
+              //   );
+              // }}
               handleBuy={() => {
-                window.open(
-                  "https://buy.stripe.com/test_4gwaH26A0eKTgp2aEK",
-                  "_blank"
+                window.alert(
+                  "Hey! Since your one of our first businesses, we want to send you a gift. Please shoot us a dm on Twitter so we can give you 50% discount on any purchase"
                 );
+                window.open("https://x.com/note_slide", "_blank");
               }}
             />
           </div>

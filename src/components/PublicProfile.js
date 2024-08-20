@@ -6,7 +6,7 @@ import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import OfflineShareIcon from "@mui/icons-material/OfflineShare";
-import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import GroupIcon from "@mui/icons-material/Group";
 import { FaBell, FaUserCircle, FaBars, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -216,7 +216,7 @@ const PublicProfile = () => {
           </div>
           <div className="flex items-center space-x-2 md:space-x-4 md:mr-12">
             <div className="w-10 h-10 hidden md:flex rounded-full items-center justify-end">
-              <TipsAndUpdatesOutlinedIcon
+              <ChatOutlinedIcon
                 onClick={() => {
                   window.open(
                     "https://docs.google.com/forms/d/e/1FAIpQLSeq_g58sbOCDxyyfY5-mCDt1PpFvNErzFtQFDFZzg9BA3mpqA/viewform",
