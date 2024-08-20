@@ -12,17 +12,16 @@ import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlin
 import GroupIcon from "@mui/icons-material/Group";
 import { IconShare3 } from "@tabler/icons-react";
 import { FaBars, FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { Helmet } from "react-helmet-async";
 
-const ViewNote = () => {
+const ViewNote = ({ id }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [note, setNote] = useState(null);
   const [likeLoading, setLikeLoading] = useState(false);
   const [favLoading, setFavLoading] = useState(false);
   const navigate = useNavigate();
-  const { id } = useParams();
   const user = JSON.parse(localStorage.getItem("user"));
   const isSmallScreen = useMediaQuery({ query: "(max-width: 600px)" });
 

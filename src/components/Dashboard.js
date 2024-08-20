@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import NoteView from "./NoteView";
 import "../index.css";
 import { Helmet } from "react-helmet-async";

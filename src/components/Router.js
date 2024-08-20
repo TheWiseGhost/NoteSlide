@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import Dashboard from "./Dashboard";
 import AddNote from "./AddNote";
-import ViewNote from "./ViewNote";
-import ViewAd from "./ViewAd";
 import AddAd from "./AddAd";
 import BusinessPortal from "./BusinessPortal";
 import AdManager from "./AdManager";
@@ -20,6 +18,7 @@ import FollowingNotes from "./FollowingNotes";
 import Following from "./Following";
 import HowMoneyNotes from "./blog/HowMoneyNotes";
 import HowMoneyUs from "./blog/HowMoneyUs";
+import Viewer from "./Viewer";
 
 const MyRouter = () => {
   return (
@@ -30,8 +29,7 @@ const MyRouter = () => {
         <Route path="/auth/" element={<Auth />} />
         <Route path="/dashboard/" element={<Dashboard />} />
         <Route path="/upload/" element={<AddNote />} />
-        <Route path="/view/:id/" element={<ViewNote />} />
-        <Route path="/ad/:id/" element={<ViewAd />} />
+        <Route path="/view/:id/" element={<Viewer />} />
         <Route path="/business_main/" element={<BusinessPortal />} />
         <Route path="/business/" element={<BusinessAuth />} />
         <Route path="/uploadad/" element={<AddAd />} />

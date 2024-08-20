@@ -6,9 +6,9 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
 import GroupIcon from "@mui/icons-material/Group";
 import { FaBars, FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const ViewAd = () => {
+const ViewAd = ({ setShow, id }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [adUrl, setAdUrl] = useState("");
   const [adId, setAdId] = useState("");
@@ -16,7 +16,6 @@ const ViewAd = () => {
   const [showViewNoteButton, setShowViewNoteButton] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(5);
   const navigate = useNavigate();
-  const { id } = useParams();
 
   const user = JSON.parse(localStorage.getItem("user"));
   useEffect(() => {
@@ -85,7 +84,7 @@ const ViewAd = () => {
   };
 
   const handleViewNote = () => {
-    navigate(`/view/${id}`);
+    setShow(true);
   };
 
   const decreaseAdMoney = async (adId) => {

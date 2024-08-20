@@ -4,7 +4,6 @@ https://note-slide.com/auth/
 https://note-slide.com/dashboard/
 https://note-slide.com/upload/
 https://note-slide.com/view/:id/
-https://note-slide.com/ad/:id/
 https://note-slide.com/business_main/
 https://note-slide.com/business/
 https://note-slide.com/uploadad/
