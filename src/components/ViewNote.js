@@ -28,7 +28,7 @@ const ViewNote = () => {
 
   useEffect(() => {
     if (!user) {
-      navigate("/auth");
+      navigate(`/auth?redirect=view/${id}`);
     }
   }, []);
 

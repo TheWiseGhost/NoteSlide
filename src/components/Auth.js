@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -10,6 +10,15 @@ const Auth = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Helper function to get query parameters
+  const getQueryParams = (search) => {
+    return new URLSearchParams(search);
+  };
+
+  // Extract the redirect parameter
+  const redirect = getQueryParams(location.search).get("redirect");
 
   const handleToggle = () => {
     setIsSignUp(!isSignUp);
@@ -47,7 +56,7 @@ const Auth = () => {
           );
         } else {
           localStorage.setItem("user", JSON.stringify(data.user));
-          navigate("/dashboard");
+          navigate(`/${redirect || "dashboard"}`);
         }
       } else {
         // Handle errors

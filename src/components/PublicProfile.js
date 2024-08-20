@@ -26,12 +26,6 @@ const PublicProfile = () => {
   const { username } = useParams();
 
   useEffect(() => {
-    if (!user) {
-      navigate("/auth");
-    }
-  });
-
-  useEffect(() => {
     const fetchNotes = async () => {
       try {
         const response = await fetch(

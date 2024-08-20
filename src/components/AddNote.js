@@ -71,11 +71,12 @@ const AddNote = () => {
 
   const handleUpload = async () => {
     if (!user) {
-      navigate("/auth");
+      navigate("/auth?redirect=upload");
     }
     setLoading(true);
     if (!selectedFile || !title || !shortTitle || !interest || !description) {
       alert("Please fill all fields and select a file.");
+      setLoading(false);
       return;
     }
 
