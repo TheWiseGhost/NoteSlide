@@ -35,7 +35,7 @@ const HowMoneyNotes = () => {
         {/* Padding to ensure content does not overlap with navbar */}
         <header className="mt-16 font-alata">
           <p className="font-nats text-gray-500 pb-4">STUDENT ESSENTIALS</p>
-          <h1 className="text-5xl font-bold pb-4">
+          <h1 className="text-5xl font-bold pb-4 leading-normal">
             How to Make Money with Notes
           </h1>
           <img

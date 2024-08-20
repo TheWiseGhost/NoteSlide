@@ -19,6 +19,7 @@ import PublicProfile from "./PublicProfile";
 import FollowingNotes from "./FollowingNotes";
 import Following from "./Following";
 import HowMoneyNotes from "./blog/HowMoneyNotes";
+import HowMoneyUs from "./blog/HowMoneyUs";
 
 const MyRouter = () => {
   return (
@@ -47,6 +48,10 @@ const MyRouter = () => {
         <Route
           path="/blog/how-to-make-money-with-notes/"
           element={<HowMoneyNotes />}
+        />
+        <Route
+          path="/blog/how-to-make-money-with-noteslide/"
+          element={<HowMoneyUs />}
         />
       </Routes>
     </Router>
