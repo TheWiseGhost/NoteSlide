@@ -9,7 +9,7 @@ const HowMoneyNotes = () => {
         <title>How to Make Money with Notes</title>
         <meta
           name="description"
-          content="Learn how to turn your valuable academic notes into a source of income. Explore popular apps and tips for success."
+          content="Learn how to turn your notes into a source of income in 2024. Explore popular apps and learn tips for success."
         />
         <meta
           name="keywords"
@@ -18,7 +18,7 @@ const HowMoneyNotes = () => {
         <meta property="og:title" content="How to Make Money with Notes" />
         <meta
           property="og:description"
-          content="Learn how to turn your valuable academic notes into a source of income. Explore popular apps and tips for success."
+          content="Learn how to turn your notes into a source of income in 2024. Explore popular apps and learn tips for success."
         />
         <meta
           property="og:url"
@@ -57,14 +57,20 @@ const HowMoneyNotes = () => {
               <p className="text-lg">
                 NoteSlide is a platform designed for students to upload and
                 share their notes. Users can view notes after watching an Ad,
-                letting creators earn the ad revenue and users get free notes
+                letting creators earn the ad revenue and users get free notes.
+                This is great for students looking to quickly make money,
+                especially since there are no creator applications or
+                requirements.
               </p>
               <div className="flex flex-row space-x-12 pt-6">
                 <div className="w-full">
                   <h1 className="text-xl font-josefin">Pros</h1>
                   <ul className="list-disc mt-2">
                     <li>Ability to build a loyal following</li>
-                    <li>Easy to use and set up without much regulation</li>
+                    <li>
+                      Easy to use and set up without much (Allows you to make
+                      money on your very first view)
+                    </li>
                     <li>Full Transperancy with views to pay ratio</li>
                   </ul>
                 </div>

@@ -19,6 +19,7 @@ import Following from "./Following";
 import HowMoneyNotes from "./blog/HowMoneyNotes";
 import HowMoneyUs from "./blog/HowMoneyUs";
 import Viewer from "./Viewer";
+import HowCashOut from "./blog/HowCashOut";
 
 const MyRouter = () => {
   return (
@@ -51,6 +52,7 @@ const MyRouter = () => {
           path="/blog/how-to-make-money-with-noteslide/"
           element={<HowMoneyUs />}
         />
+        <Route path="/blog/how-to-cash-out/" element={<HowCashOut />} />
       </Routes>
     </Router>
   );

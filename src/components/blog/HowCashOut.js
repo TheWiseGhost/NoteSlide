@@ -3,21 +3,24 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import Navbar from "./Navbar"; // Import Navbar component
 import { useNavigate } from "react-router-dom";
 
-const HowMoneyUs = () => {
+const HowCashOut = () => {
   const navigate = useNavigate();
   return (
     <HelmetProvider>
       <Helmet>
-        <title>How to Make Money with NoteSlide</title>
+        <title>How to Cash Out Your Money from NoteSlide</title>
         <meta
           name="description"
-          content="Learn how to make money from your notes quickly using NoteSlide."
+          content="How to Cash Out Your Money from NoteSlide"
         />
-        <meta name="keywords" content="Notes, Money, Students, Income, Easy" />
+        <meta
+          name="keywords"
+          content="make money, notes, cash out, student income"
+        />
         <meta property="og:title" content="How to Make Money with Notes" />
         <meta
           property="og:description"
-          content="Learn how to make money using NoteSlide "
+          content="How to Cash Out Your Money from NoteSlide"
         />
         <meta
           property="og:url"
@@ -35,7 +38,7 @@ const HowMoneyUs = () => {
         <header className="mt-16 font-alata">
           <p className="font-nats text-gray-500 pb-4">STUDENT ESSENTIALS</p>
           <h1 className="text-5xl font-bold pb-4 leading-normal">
-            How to Make Money with NoteSlide
+            How to Cash Out Your Money from NoteSlide
           </h1>
           <img
             src="https://www.marketplace.org/wp-content/uploads/2023/04/USdollar.jpg?fit=2800%2C1866"
@@ -51,57 +54,61 @@ const HowMoneyUs = () => {
 
             <div className="space-y-6 pt-12">
               <a className="text-2xl font-josefin font-semibold">
-                1. Convert everything to PDFs before uploading
+                1. Reach $20
               </a>
               <p className="text-lg">
-                NoteSlide is known to prefer PDFs in their algorithm, so be sure
-                to do this. You can convert images to PDFs on their site. Once
-                you upload a note, you will make money straight away, one of the
-                benefits of NoteSlide
+                Users are required to make at least $20 on the platform before
+                cashing out. This is about 10,000 views on the platform as of
+                August 2024, but NoteSlide has promised to try and get the
+                number down as far as 2,500 views by 2025 once they get more
+                advertisers. Either way, you must reach $20 of balance to cash
+                out.
               </p>
             </div>
 
             <div className="space-y-4 pt-12">
               <a className="text-2xl font-josefin font-semibold">
-                2. Upload anything and everything
+                2. Contact Them
               </a>
               <p className="text-lg">
-                Since every single view will get you money (yes, even for
-                completely new users), it's pretty sound to assume that quantity
-                is recommended. Although quality is required to build a
-                following and hit the front page of NoteSlide, those looking to
-                make a buck as quick as possible should just dump their Google
-                Drive.
-              </p>
-            </div>
-
-            <div className="space-y-4 pt-12">
-              <a className="text-2xl font-josefin font-semibold">
-                3. Build a following
-              </a>
-              <p className="text-lg">
-                Although quantity will get you the first few bucks, the truth is
-                all the big players of any platform have a huge following. If
-                you want your notes to reach thousands, you have to ask more
-                people to follow you and boost your account. To start off, you
-                can get your friends to follow and add "follow me" prompts in
-                your notes.
+                NoteSlide is a relatively new platform so they don't have the
+                best payment infrastructure. Instead, they prefer if you just
+                email them like a friend and then follow their instructions to
+                recieve a payment. NoteSlide is working on building better
+                payment infrastructure and apologizes to any users for the
+                inconvient process. <br /> <br />
+                You can reach NoteSlide through Gmail - noteslilde@gmail.com
+                (the typo is on purpose, ask the founders not me why its named
+                this way)
+                <br />
+                <br />
+                Or you can contact them on X through -{" "}
+                <a
+                  href="https://x.com/note_slide"
+                  className="underline"
+                  target="_blank"
+                >
+                  https://x.com/note_slide
+                </a>
               </p>
             </div>
           </section>
           <section className="pb-20">
             <h2 className="text-4xl font-alata font-semibold pt-32 pb-12">
-              The Most Important Thing
+              Not at $20 yet?
             </h2>
             <ul className="list-disc mt-2 space-y-6 text-lg">
               <li>
-                <p className="font-josefin text-xl">Just Get Started:</p>
-                While it can make you nervous to try something new and expose
-                your work to others, it's taking the first step that makes all
-                the fear go away. With the ability to make money with the very
-                first view, NoteSlide offers an easy way to make money off your
-                notes, without any credit card or personal info required.
-                Ultimately, that's it. Just dive right in.
+                <p className="font-josefin text-xl">
+                  Just Start Pumping Notes:
+                </p>
+                Since every single view will get you money (yes, even for
+                completely new users), it's pretty sound to assume that quantity
+                is recommended. Although quality is required to build a
+                following and hit the front page of NoteSlide, those looking to
+                make a buck as quick as possible should just dump their Google
+                Drive. Ulimately, just let time take its course and the views
+                will come eventually.
               </li>
               <div
                 className="wipe pt-2 pb-1 px-4 font-josefin text-lg w-fit"
@@ -118,4 +125,4 @@ const HowMoneyUs = () => {
   );
 };
 
-export default HowMoneyUs;
+export default HowCashOut;
