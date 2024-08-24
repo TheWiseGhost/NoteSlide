@@ -83,7 +83,7 @@ const Auth = () => {
           name="description"
           content="Log in to NoteSlide to access your personalized library of free, user-uploaded notes. Secure your study resources/information and make money from your notes."
         />
-        <link rel="canonical" href="https://note-slide.com/auth" />
+        <link rel="canonical" href="https://note-slide.com/auth/" />
       </Helmet>
       <img
         src="/images/NoteSlideLogo.png"
