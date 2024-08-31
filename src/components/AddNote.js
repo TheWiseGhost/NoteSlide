@@ -248,7 +248,7 @@ const AddNote = () => {
                 type="text"
                 value={title}
                 onChange={handleTitleChange}
-                placeholder="Enter title"
+                placeholder="Enter title (max 50 characters)"
                 className="mb-4 px-4 py-2 border border-gray-600 rounded-md w-full md:w-3/5 justify-center"
                 maxLength="50"
               />
@@ -256,7 +256,7 @@ const AddNote = () => {
                 type="text"
                 value={shortTitle}
                 onChange={handleShortTitleChange}
-                placeholder="Enter short title (max 30 characters)"
+                placeholder="Enter short title (max 20 characters)"
                 className="mb-4 px-4 py-2 border border-gray-600 rounded-md w-full md:w-3/5 justify-center"
                 maxLength="30"
               />
