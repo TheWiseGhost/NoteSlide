@@ -20,6 +20,7 @@ import HowMoneyNotes from "./blog/HowMoneyNotes";
 import HowMoneyUs from "./blog/HowMoneyUs";
 import Viewer from "./Viewer";
 import HowCashOut from "./blog/HowCashOut";
+import YTButNotes from "./blog/YTButNotes";
 
 const MyRouter = () => {
   return (
@@ -53,6 +54,7 @@ const MyRouter = () => {
           element={<HowMoneyUs />}
         />
         <Route path="/blog/how-to-cash-out/" element={<HowCashOut />} />
+        <Route path="/blog/youtube-but-notes/" element={<YTButNotes />} />
       </Routes>
     </Router>
   );
