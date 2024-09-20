@@ -21,11 +21,11 @@ const YTButNotes = () => {
         />
         <meta
           property="og:url"
-          content="https://note-slide/blog/youtube-but-notes"
+          content="https://note-slide/blog/youtube-but-notes/"
         />
         <link
           rel="canonical"
-          href="https://note-slide.com/blog/youtube-but-notes"
+          href="https://note-slide.com/blog/youtube-but-notes/"
         />
       </Helmet>
       <Navbar />
