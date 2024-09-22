@@ -64,8 +64,9 @@ const NoteView = () => {
   const handleNoteClick = (id) => {
     if (!user) {
       navigate(`/auth?redirect=view/${id}`);
+    } else {
+      navigate(`/view/${id}`);
     }
-    navigate(`/view/${id}`);
   };
 
   const handleSearchChange = (e) => {

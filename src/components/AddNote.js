@@ -42,6 +42,14 @@ const AddNote = () => {
     const file = event.target.files[0];
 
     if (file) {
+      // Check if the file is a PDF
+      if (file.type !== "application/pdf") {
+        alert(
+          "Please select a PDF file. Convert images to pdf using the link below"
+        );
+        setSelectedFile(null); // Clear the file input
+        return;
+      }
       // Check file size
       if (file.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
         // Convert MB to bytes
