@@ -189,7 +189,7 @@ const NoteView = () => {
               <GroupAddOutlinedIcon
                 onClick={() => {
                   handleShare(
-                    "https://note-slide.com/dashboard/",
+                    `https://note-slide.com/auth/?referral=${user.id}`,
                     `${user.name} invited you to NoteSlide`
                   );
                 }}

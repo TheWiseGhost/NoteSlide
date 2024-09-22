@@ -19,6 +19,7 @@ const Auth = () => {
 
   // Extract the redirect parameter
   const redirect = getQueryParams(location.search).get("redirect");
+  const referral = getQueryParams(location.search).get("referral");
 
   const handleToggle = () => {
     setIsSignUp(!isSignUp);
@@ -29,9 +30,13 @@ const Auth = () => {
     e.preventDefault();
     setLoading(true);
     const url = isSignUp
-      ? "https://noteslidebackend.onrender.com/api/signup/"
+      ? "http://noteslidebackend.onrender.com/api/signup/"
       : "https://noteslidebackend.onrender.com/api/login/";
-    const payload = isSignUp ? { email, name, password } : { email, password };
+    const payload = isSignUp
+      ? referral
+        ? { email, name, password, referral }
+        : { email, name, password }
+      : { email, password };
 
     try {
       const response = await fetch(url, {
