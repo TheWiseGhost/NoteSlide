@@ -30,7 +30,7 @@ const Auth = () => {
     e.preventDefault();
     setLoading(true);
     const url = isSignUp
-      ? "http://noteslidebackend.onrender.com/api/signup/"
+      ? "https://noteslidebackend.onrender.com/api/signup/"
       : "https://noteslidebackend.onrender.com/api/login/";
     const payload = isSignUp
       ? referral
