@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import HomeIcon from "@mui/icons-material/Home";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
@@ -21,6 +21,29 @@ const NoteView = () => {
   const [activeSearchTerm, setActiveSearchTerm] = useState("");
   const user = JSON.parse(localStorage.getItem("user")) || null;
   const navigate = useNavigate();
+
+  const [showPopup, setShowPopup] = useState(false);
+  const iconRef = useRef(null);
+  const [popupPosition, setPopupPosition] = useState({ left: "0%" });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (iconRef.current) {
+        const { left, width } = iconRef.current.getBoundingClientRect();
+        setPopupPosition({ left: left + width / 2 });
+      }
+      setShowPopup(true);
+    }, 2000);
+
+    const hideTimer = setTimeout(() => {
+      setShowPopup(false);
+    }, 10000);
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(hideTimer);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchNotes = async () => {
@@ -186,16 +209,37 @@ const NoteView = () => {
             />
           </div>
           <div className="flex items-center space-x-2 md:space-x-4 md:mr-12">
-            <div className="w-6 h-6 pr-2 md:mr-0 flex rounded-full items-center justify-end">
-              <GroupAddOutlinedIcon
-                onClick={() => {
-                  handleShare(
-                    `https://note-slide.com/auth/?referral=${user.id}`,
-                    `${user.name} invited you to NoteSlide`
-                  );
-                }}
-                className="text-gray-900 hover:cursor-pointer cursor-pointer"
-              />
+            <div>
+              <div className="w-6 h-6 pr-2 md:mr-0 flex rounded-full items-center justify-end">
+                <GroupAddOutlinedIcon
+                  ref={iconRef}
+                  onClick={() => {
+                    handleShare(
+                      `https://note-slide.com/auth/?referral=${user.id}`,
+                      `${user.name} invited you to NoteSlide`
+                    );
+                  }}
+                  className="text-gray-900 hover:cursor-pointer cursor-pointer"
+                />
+              </div>
+              {showPopup && (
+                <motion.div
+                  className="absolute bg-gray-800 text-white p-2 rounded"
+                  initial={{ opacity: 0, translateY: -10 }}
+                  animate={{ opacity: 1, translateY: 0 }}
+                  exit={{ opacity: 0, translateY: -10 }}
+                  transition={{ duration: 0.3 }}
+                  style={{
+                    position: "absolute",
+                    top: "85%", // Position the box directly below the icon
+                    left: `${popupPosition.left - 90}px`, // Set x position based on icon's position
+                  }}
+                >
+                  {/* Triangle */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 -top-2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-transparent border-b-gray-800"></div>
+                  Share for $0.25!
+                </motion.div>
+              )}
             </div>
             <div className="w-10 h-10 hidden md:flex rounded-full items-center justify-end">
               <ChatOutlinedIcon
