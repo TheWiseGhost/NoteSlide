@@ -376,6 +376,20 @@ const Profile = () => {
                 >
                   <span>Upload Note</span>
                 </div>
+                <div
+                  onClick={() => {
+                    if (user.balance < 25) {
+                      window.alert("You must reach $25 to cash out");
+                    } else {
+                      window.alert(
+                        "Contact us at noteslilde@gmail.com and send your username so we can set up the transfer!"
+                      );
+                    }
+                  }}
+                  className="cashout mx-20 md:mx-0 py-3 px-6 text-lg font-josefin md:ml-12 mt-4 md:mt-0"
+                >
+                  <span>Cashout</span>
+                </div>
               </div>
 
               <div className="flex flex-row pt-8 md:pt-0 space-x-2 md:mb-2 md:pr-24 justify-center md:justify-normal items-center">
