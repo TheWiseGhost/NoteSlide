@@ -24,11 +24,11 @@ const HowCashOut = () => {
         />
         <meta
           property="og:url"
-          content="https://note-slide/blog/how-to-make-money-with-notes"
+          content="https://note-slide/blog/how-to-cash-out"
         />
         <link
           rel="canonical"
-          href="https://note-slide.com/blog/how-to-make-money-with-notes"
+          href="https://note-slide.com/blog/how-to-cash-out"
         />
       </Helmet>
       <Navbar />

@@ -23,6 +23,7 @@ import HowCashOut from "./blog/HowCashOut";
 import YTButNotes from "./blog/YTButNotes";
 import WhatIsNoteSlide from "./blog/WhatIsNoteSlide";
 import CreatorPolicy from "./blog/CreatorPolicy";
+import HowShareNotes from "./blog/HowShareNotes";
 
 const MyRouter = () => {
   return (
@@ -59,6 +60,7 @@ const MyRouter = () => {
         <Route path="/blog/youtube-but-notes/" element={<YTButNotes />} />
         <Route path="/blog/what-is-noteslide/" element={<WhatIsNoteSlide />} />
         <Route path="/blog/creator-policy/" element={<CreatorPolicy />} />
+        <Route path="/blog/how-share-notes/" element={<HowShareNotes />} />
       </Routes>
     </Router>
   );
