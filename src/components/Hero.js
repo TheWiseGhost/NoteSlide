@@ -19,7 +19,7 @@ const Hero = () => {
             className="w-10"
             alt="NoteSlide Logo"
           />
-          <div className="text-2xl text-black font-bold md:font-semibold font-nats">
+          <div className="text-2xl text-black font-bold md:font-semibold font-outfit md:font-nats">
             Note Slide
           </div>
         </div>
@@ -96,7 +96,7 @@ const Hero = () => {
 
       {/* Main Content */}
       <div className="text-center mt-12">
-        <div className="mx-4 md:mx-0 text-5xl md:text-7xl flex flex-col text-center font-outfit font-semibold mb-8 animate-floatUp">
+        <div className="mx-4 md:mx-0 text-5xl md:text-7xl flex flex-col text-center font-josefin md:font-outfit font-normal md:font-semibold mb-8 animate-floatUp">
           <h1 className="leading-snug">
             Simply the Best Way to <br className="hidden md:block" /> Share
             Notes

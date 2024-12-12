@@ -287,8 +287,11 @@ const AddNote = () => {
                     className="p-6 mb-2 flex flex-col items-center justify-center h-auto bg-zinc-100 rounded-2xl border-2 border-dashed border-gray-400 cursor-pointer"
                   >
                     <CloudUploadIcon style={{ fontSize: 40, color: "gray" }} />
-                    <span className="mt-2 text-base leading-normal text-center text-gray-600">
+                    <span className="hidden md:flex mt-2 text-base leading-normal text-center text-gray-600">
                       Drag & drop your PDF here, or click to select
+                    </span>
+                    <span className="flex md:hidden mt-2 text-base leading-normal text-center text-gray-600">
+                      Add PDF here
                     </span>
                     <input
                       id="file-upload"
