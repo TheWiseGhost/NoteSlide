@@ -237,7 +237,7 @@ const NoteView = () => {
                 >
                   {/* Triangle */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 -top-2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-transparent border-b-gray-800"></div>
-                  Share for $0.25!
+                  Share for $1.00 each!
                 </motion.div>
               )}
             </div>
