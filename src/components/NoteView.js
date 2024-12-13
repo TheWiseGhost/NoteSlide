@@ -12,6 +12,7 @@ import { FaBell, FaUserCircle, FaBars, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
+import QRCode from "qrcode";
 
 const NoteView = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -25,6 +26,9 @@ const NoteView = () => {
   const [showPopup, setShowPopup] = useState(false);
   const iconRef = useRef(null);
   const [popupPosition, setPopupPosition] = useState({ left: "0%" });
+
+  const [qrCodeUrl, setQrCodeUrl] = useState("");
+  const [showQR, setShowQR] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -127,6 +131,15 @@ const NoteView = () => {
       });
   };
 
+  const generateQRCode = async (link) => {
+    try {
+      const qrCode = await QRCode.toDataURL(link); // Generate QR code as a data URL
+      setQrCodeUrl(qrCode); // Set the QR code URL
+    } catch (error) {
+      console.error("Error generating QR code:", error);
+    }
+  };
+
   return (
     <div className="flex min-h-screen ml-6">
       {/* Sidebar */}
@@ -214,10 +227,16 @@ const NoteView = () => {
                 <GroupAddOutlinedIcon
                   ref={iconRef}
                   onClick={() => {
-                    handleShare(
-                      `https://note-slide.com/auth/?referral=${user.id}`,
-                      `${user.name} invited you to NoteSlide`
-                    );
+                    if (user) {
+                      setShowQR(!showQR);
+                      generateQRCode(
+                        `https://note-slide.com/auth/?referral=${user.id}`
+                      );
+                      handleShare(
+                        `https://note-slide.com/auth/?referral=${user.id}`,
+                        `${user.name} invited you to NoteSlide`
+                      );
+                    }
                   }}
                   className="text-gray-900 hover:cursor-pointer cursor-pointer"
                 />
@@ -402,6 +421,18 @@ const NoteView = () => {
               } pt-6 pb-20 min-h-screen bg-white flex flex-wrap`}
               style={{ gap: "48px" }} // Add gap between items
             >
+              {qrCodeUrl && (
+                <div className="flex flex-col w-full mr-12 justify-center items-center">
+                  <h3 className="font-outfit underline text-xl text-center">
+                    Share NoteSlide
+                  </h3>
+                  <img
+                    src={qrCodeUrl}
+                    alt="QR Code"
+                    className="flex w-full md:w-1/4"
+                  />
+                </div>
+              )}
               {notes.map((note) => (
                 <NoteCard
                   key={note._id}
