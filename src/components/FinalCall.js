@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const FinalCall = () => {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-white flex flex-col px-4 md:px-20 pt-20 pb-12">
+    <div className="min-h-screen bg-white flex flex-col px-4 md:px-20 pt-20 pb-4">
       <div className="text-center">
         <h1 className="text-6xl font-outfit font-semibold text-center">
           You've read our Notes

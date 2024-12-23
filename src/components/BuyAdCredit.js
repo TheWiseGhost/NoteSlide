@@ -24,34 +24,28 @@ const BuyAdCredit = () => {
     }
   }, []);
 
-  const handleBuy = async (amount) => {
-    const data = {
-      id: user.id,
-      name: user.name,
-      amount: amount,
-    };
+  const createCheckout = async (prod_id) => {
     try {
-      setLoading(true);
       const response = await fetch(
-        "https://noteslidebackend.onrender.com/api/buy_ad_credit/",
+        "https://noteslidebackend.onrender.com/api/create_checkout_session/",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify({
+            product_id: prod_id,
+            user_id: user?.id, // Pass the user ID from localStorage or state
+          }),
         }
       );
-      if (!response.ok) {
-        throw new Error("Failed to buy Ad Credit");
+
+      const data = await response.json();
+      if (data.url) {
+        window.location.href = data.url; // Redirect to Stripe checkout
       }
-      window.alert(
-        `$${amount} credit added. Please logout and log back in to use your new credit.`
-      );
     } catch (error) {
-      console.error("Error buying Ad Credit:", error);
-    } finally {
-      setLoading(false);
+      console.error("Error creating checkout session:", error);
     }
   };
 
@@ -173,108 +167,42 @@ const BuyAdCredit = () => {
               text={"Get your feet wet"}
               price={"5"}
               loading={loading}
-              // handleBuy={() => {
-              //   window.open(
-              //     "https://buy.stripe.com/test_8wMdTe5vW6endcQ6op",
-              //     "_blank"
-              //   );
-              // }}
-              handleBuy={() => {
-                window.alert(
-                  "Hey! Since your one of our first businesses, we want to send you a gift. Please shoot us a dm on Twitter so we can give you 50% discount on any purchase"
-                );
-                window.open("https://x.com/note_slide", "_blank");
-              }}
+              handleBuy={() => createCheckout("prod_RP9cgLnuHCyOSC")}
             />
             <AdCreditCard
               title={"Starter"}
               text={"First campaign?"}
               price={"20"}
               loading={loading}
-              // handleBuy={() => {
-              //   window.open(
-              //     "https://buy.stripe.com/test_eVag1m0bC5ajgp2fZ0",
-              //     "_blank"
-              //   );
-              // }}
-              handleBuy={() => {
-                window.alert(
-                  "Hey! Since your one of our first businesses, we want to send you a gift. Please shoot us a dm on Twitter so we can give you 50% discount on any purchase"
-                );
-                window.open("https://x.com/note_slide", "_blank");
-              }}
+              handleBuy={() => createCheckout("prod_RP9cMQUI1XUd1R")}
             />
             <AdCreditCard
               title={"Regular"}
               text={"Standard Budget to Grow"}
               price={"50"}
               loading={loading}
-              // handleBuy={() => {
-              //   window.open(
-              //     "https://buy.stripe.com/test_28og1m1fG46f4GkbIL",
-              //     "_blank"
-              //   );
-              // }}
-              handleBuy={() => {
-                window.alert(
-                  "Hey! Since your one of our first businesses, we want to send you a gift. Please shoot us a dm on Twitter so we can give you 50% discount on any purchase"
-                );
-                window.open("https://x.com/note_slide", "_blank");
-              }}
+              handleBuy={() => createCheckout("prod_RP9clgg2F0STZa")}
             />
             <AdCreditCard
               title={"Business"}
               text={"Spend Money to Make Money"}
               price={"100"}
               loading={loading}
-              // handleBuy={() => {
-              //   window.open(
-              //     "https://buy.stripe.com/test_aEUbL65vWbyH5Ko7sw",
-              //     "_blank"
-              //   );
-              // }}
-              handleBuy={() => {
-                window.alert(
-                  "Hey! Since your one of our first businesses, we want to send you a gift. Please shoot us a dm on Twitter so we can give you 50% discount on any purchase"
-                );
-                window.open("https://x.com/note_slide", "_blank");
-              }}
+              handleBuy={() => createCheckout("prod_RP9bMSBsL7kw2C")}
             />
             <AdCreditCard
               title={"Baller"}
               text={"The Money Machine that keeps printing"}
               price={"500"}
               loading={loading}
-              // handleBuy={() => {
-              //   window.open(
-              //     "https://buy.stripe.com/test_cN23eA1fGfOXc8M6ot",
-              //     "_blank"
-              //   );
-              // }}
-              handleBuy={() => {
-                window.alert(
-                  "Hey! Since your one of our first businesses, we want to send you a gift. Please shoot us a dm on Twitter so we can give you 50% discount on any purchase"
-                );
-                window.open("https://x.com/note_slide", "_blank");
-              }}
+              handleBuy={() => createCheckout("prod_RP9bqqcFCSxzGv")}
             />
             <AdCreditCard
               title={"Millionare"}
               text={"There's no stopping you from going to the top"}
               price={"1500"}
               loading={loading}
-              // handleBuy={() => {
-              //   window.open(
-              //     "https://buy.stripe.com/test_4gwaH26A0eKTgp2aEK",
-              //     "_blank"
-              //   );
-              // }}
-              handleBuy={() => {
-                window.alert(
-                  "Hey! Since your one of our first businesses, we want to send you a gift. Please shoot us a dm on Twitter so we can give you 50% discount on any purchase"
-                );
-                window.open("https://x.com/note_slide", "_blank");
-              }}
+              handleBuy={() => createCheckout("prod_RP9b8t7JTmE4G5")}
             />
           </div>
         </div>
@@ -284,7 +212,6 @@ const BuyAdCredit = () => {
 };
 
 const AdCreditCard = ({ title, text, price, loading, handleBuy }) => {
-  const amount = price;
   return (
     <div className="relative flex flex-col bg-white border-2 border-black">
       <div className="triangle -left-0.5 -top-0.5"></div>

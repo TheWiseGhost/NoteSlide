@@ -7,6 +7,7 @@ import MoneyMap from "./MoneyMap";
 import Testimonials from "./Testimonials";
 import FinalCall from "./FinalCall";
 import { Helmet } from "react-helmet-async";
+import Footer from "./Footer";
 
 const LandingPage = () => {
   return (
@@ -26,6 +27,7 @@ const LandingPage = () => {
         <MoneyMap />
         <Testimonials />
         <FinalCall />
+        <Footer />
       </div>
     </>
   );
