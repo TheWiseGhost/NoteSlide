@@ -242,6 +242,8 @@ const ViewAd = ({ setShow, id }) => {
                 src={adUrl}
                 type="video/mp4"
                 autoPlay={true}
+                disablePictureInPicture
+                playsInline
               />
               <div className="flex flex-row justify-between w-11/12 md:w-4/5 mx-auto">
                 <button
