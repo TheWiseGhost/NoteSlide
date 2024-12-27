@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import HomeIcon from "@mui/icons-material/Home";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
@@ -7,6 +7,62 @@ import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import GroupIcon from "@mui/icons-material/Group";
 import { FaBars, FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+
+const AdVideo = ({
+  adUrl,
+  showViewNoteButton,
+  timeRemaining,
+  handleVisitBusiness,
+  handleViewNote,
+}) => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      // Ensure the video starts playing automatically after the page reload
+      videoRef.current.play().catch((err) => {
+        console.log("Autoplay failed:", err);
+      });
+    }
+  }, []);
+
+  return (
+    <div className="flex flex-col items-center justify-center">
+      <video
+        ref={videoRef}
+        className="w-full md:w-4/5 h-auto pointer-events-none"
+        src={adUrl}
+        type="video/mp4"
+        autoPlay
+        muted // Muting to avoid any sound issues with autoplay
+        disablePictureInPicture
+        playsInline
+        loop // Ensures the video loops when it ends
+      />
+      <div className="flex flex-row justify-between w-11/12 md:w-4/5 mx-auto">
+        <button
+          onClick={handleVisitBusiness}
+          className="bg-amber-300 hover:bg-amber-400 mt-4 px-4 py-2 font-alata"
+        >
+          Check it out
+        </button>
+        {showViewNoteButton ? (
+          <button
+            onClick={handleViewNote}
+            className="mt-4 px-4 py-2 wipe"
+            style={{ alignSelf: "center" }}
+          >
+            View Note
+          </button>
+        ) : (
+          <div className="mt-4 px-4 py-2 text-center">
+            View Note in {timeRemaining}s
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const ViewAd = ({ setShow, id }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -235,38 +291,13 @@ const ViewAd = ({ setShow, id }) => {
         {/* Main Section */}
         <div className="flex-grow flex flex-col items-center justify-center">
           {adUrl ? (
-            <div className="flex flex-col items-center justify-center">
-              <video
-                controls
-                className="w-full md:w-4/5 h-auto pointer-events-none"
-                src={adUrl}
-                type="video/mp4"
-                autoPlay={true}
-                disablePictureInPicture
-                playsInline
-              />
-              <div className="flex flex-row justify-between w-11/12 md:w-4/5 mx-auto">
-                <button
-                  onClick={handleVisitBusiness}
-                  className="bg-amber-300 hover:bg-amber-400 mt-4 px-4 py-2 font-alata"
-                >
-                  Check it out
-                </button>
-                {showViewNoteButton ? (
-                  <button
-                    onClick={handleViewNote}
-                    className="mt-4 px-4 py-2 wipe"
-                    style={{ alignSelf: "center" }}
-                  >
-                    View Note
-                  </button>
-                ) : (
-                  <div className="mt-4 px-4 py-2 text-center">
-                    View Note in {timeRemaining}s
-                  </div>
-                )}
-              </div>
-            </div>
+            <AdVideo
+              adUrl={adUrl}
+              showViewNoteButton={showViewNoteButton}
+              timeRemaining={timeRemaining}
+              handleVisitBusiness={handleVisitBusiness}
+              handleViewNote={handleViewNote}
+            />
           ) : (
             <div className="flex items-center justify-center h-full">
               <div className="text-2xl pt-0 font-outfit">
