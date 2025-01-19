@@ -14,6 +14,7 @@ const AddNote = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [title, setTitle] = useState("");
   const [shortTitle, setShortTitle] = useState("");
+  const [school, setSchool] = useState("");
   const [description, setDescription] = useState("");
   const [interest, setInterest] = useState("");
   const [loading, setLoading] = useState(false);
@@ -77,6 +78,10 @@ const AddNote = () => {
     setDescription(event.target.value.slice(0, 300));
   };
 
+  const handleSchoolChange = (event) => {
+    setSchool(event.target.value.slice(0, 150));
+  };
+
   const handleUpload = async () => {
     if (!user) {
       navigate("/auth?redirect=upload");
@@ -93,6 +98,7 @@ const AddNote = () => {
       formData.append("pdf_file", selectedFile);
       formData.append("title", title);
       formData.append("short_title", shortTitle);
+      formData.append("school", school);
       formData.append("description", description);
       formData.append("user", user.name);
       formData.append("user_id", user.id);
@@ -265,6 +271,14 @@ const AddNote = () => {
                 value={shortTitle}
                 onChange={handleShortTitleChange}
                 placeholder="Enter short title (max 20 characters)"
+                className="mb-4 px-4 py-2 border border-gray-600 rounded-md w-full md:w-3/5 justify-center"
+                maxLength="30"
+              />
+              <input
+                type="text"
+                value={school}
+                onChange={handleSchoolChange}
+                placeholder="Enter School, University, Company, or Program"
                 className="mb-4 px-4 py-2 border border-gray-600 rounded-md w-full md:w-3/5 justify-center"
                 maxLength="30"
               />
