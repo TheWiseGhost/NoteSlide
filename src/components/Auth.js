@@ -141,7 +141,7 @@ const Auth = () => {
                   <input
                     className="flip-card__input"
                     name="name"
-                    placeholder="Name"
+                    placeholder="Username"
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}

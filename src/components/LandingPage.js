@@ -27,7 +27,7 @@ const LandingPage = () => {
         <MoneyMap />
         <Testimonials />
         <FinalCall />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

@@ -203,8 +203,8 @@ const BusinessAuth = () => {
           {/* Auth */}
           <div>
             <h1 className="font-outfit text-md text-center text-black pt-4">
-              Instantly get $10 of Ad Credit when you sign up (no strings
-              attached) - expires in 2 days!
+              Instantly get $5 of Ad Credit when you sign up (no strings
+              attached)
             </h1>
           </div>
           <div className="wrapper min-h-screen">
@@ -257,7 +257,7 @@ const BusinessAuth = () => {
                       <input
                         className="flip-card__input"
                         name="name"
-                        placeholder="Name"
+                        placeholder="Business Name"
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}

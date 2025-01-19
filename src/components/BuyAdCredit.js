@@ -230,7 +230,7 @@ const AdCreditCard = ({ title, text, price, loading, handleBuy }) => {
               </span>
               <span className="text-base font-medium text-gray-500">
                 {" "}
-                /monthly{" "}
+                /one-time{" "}
               </span>
             </p>
           </div>

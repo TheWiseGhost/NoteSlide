@@ -251,12 +251,12 @@ const NoteView = () => {
                   style={{
                     position: "absolute",
                     top: "85%", // Position the box directly below the icon
-                    left: `${popupPosition.left - 90}px`, // Set x position based on icon's position
+                    left: `${popupPosition.left - 57}px`, // Set x position based on icon's position
                   }}
                 >
                   {/* Triangle */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 -top-2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-transparent border-b-gray-800"></div>
-                  Share for $1.00 each!
+                  Share!
                 </motion.div>
               )}
             </div>
@@ -424,7 +424,7 @@ const NoteView = () => {
               {qrCodeUrl && (
                 <div className="flex flex-col w-full mr-12 justify-center items-center">
                   <h3 className="font-outfit underline text-xl text-center">
-                    Share NoteSlide
+                    Share NoteSlide (make $0.25 too!)
                   </h3>
                   <img
                     src={qrCodeUrl}

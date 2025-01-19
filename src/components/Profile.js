@@ -382,7 +382,7 @@ const Profile = () => {
                       window.alert("You must reach $25 to cash out");
                     } else {
                       window.alert(
-                        "Contact us at noteslilde@gmail.com and send your username so we can set up the transfer!"
+                        "Contact us at noteslilde@gmail.com (there's an extra l) and send your username so we can set up the transfer!"
                       );
                     }
                   }}
