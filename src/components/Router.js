@@ -24,6 +24,7 @@ import YTButNotes from "./blog/YTButNotes";
 import WhatIsNoteSlide from "./blog/WhatIsNoteSlide";
 import CreatorPolicy from "./blog/CreatorPolicy";
 import HowShareNotes from "./blog/HowShareNotes";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 const MyRouter = () => {
   return (
@@ -47,6 +48,7 @@ const MyRouter = () => {
         <Route path="/verify/:token/" element={<VerifyEmail />} />
         <Route path="/verify_business/:token/" element={<VerifyBusiness />} />
         <Route path="/public_profile/:username/" element={<PublicProfile />} />
+        <Route path="/privacy/" element={<PrivacyPolicy />} />
 
         <Route
           path="/blog/how-to-make-money-with-notes/"
