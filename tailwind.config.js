@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        outfit: ["Outfit", "sans-serif"],
+        outfit: ["Afacad Flux", "serif"],
         alata: ["Alata", "sans-serif"],
-        nats: ["Noto Sans", "sans-serif"],
+        nats: ["Afacad Flux", "sans-serif"],
         josefin: ['"Josefin Sans"', "sans-serif"],
       },
     },
