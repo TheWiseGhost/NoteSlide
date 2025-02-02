@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./blog/Navbar";
+import { Helmet } from "react-helmet-async";
 
 const pages = [
   { name: "About", key: "about" },
@@ -248,14 +249,24 @@ const SidebarNavigation = () => {
 
 const Internships = () => {
   return (
-    <div className="flex flex-col">
-      <div>
-        <Navbar />
+    <>
+      <Helmet>
+        <title>Internships | NoteSlide</title>
+        <meta
+          name="description"
+          content="Join the NoteSlide team today through an internship!"
+        />
+        <link rel="canonical" href="https://note-slide.com/internships/" />
+      </Helmet>
+      <div className="flex flex-col">
+        <div>
+          <Navbar />
+        </div>
+        <div className="h-fit pt-28">
+          <SidebarNavigation />
+        </div>
       </div>
-      <div className="h-fit pt-28">
-        <SidebarNavigation />
-      </div>
-    </div>
+    </>
   );
 };
 
