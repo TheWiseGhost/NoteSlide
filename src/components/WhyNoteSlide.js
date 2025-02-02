@@ -43,7 +43,7 @@ const WhyNoteSlide = () => {
       </div>
 
       <p className="mt-20 text-4xl font-outfit text-gray-600 text-center">
-        Come On, It's a No Brainer
+        Share your own notes to anyone too!
       </p>
     </div>
   );
