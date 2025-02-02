@@ -25,6 +25,7 @@ import WhatIsNoteSlide from "./blog/WhatIsNoteSlide";
 import CreatorPolicy from "./blog/CreatorPolicy";
 import HowShareNotes from "./blog/HowShareNotes";
 import PrivacyPolicy from "./PrivacyPolicy";
+import Internships from "./Internships";
 
 const MyRouter = () => {
   return (
@@ -49,6 +50,7 @@ const MyRouter = () => {
         <Route path="/verify_business/:token/" element={<VerifyBusiness />} />
         <Route path="/public_profile/:username/" element={<PublicProfile />} />
         <Route path="/privacy/" element={<PrivacyPolicy />} />
+        <Route path="/internships/" element={<Internships />} />
 
         <Route
           path="/blog/how-to-make-money-with-notes/"

@@ -9,7 +9,7 @@ const Navbar = () => {
   };
   return (
     <div className="fixed top- w-full bg-white">
-      <nav className="w-full flex items-center justify-between p-4 px-8 md:px-12 pt-8 sticky shadow-lg shadow-gray-200">
+      <nav className="w-full flex items-center justify-between p-4 px-8 md:px-12 pt-8 sticky shadow-md shadow-gray-200">
         <div className="flex flex-row justify-center w-fit items-center space-x-2 md:space-x-4">
           <img
             src="/images/NoteSlideLogo.png"
