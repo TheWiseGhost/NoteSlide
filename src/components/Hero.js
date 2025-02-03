@@ -27,6 +27,24 @@ const Hero = () => {
           <div className="hidden md:flex space-x-12">
             <button
               style={{ cursor: "pointer" }}
+              onClick={() => window.open("/internships")}
+              className="text_button bg-white text-gray-700 pl-10"
+            >
+              <span className="span-mother">
+                <span>J</span>
+                <span>o</span>
+                <span>b</span>
+                <span>s</span>
+              </span>
+              <span className="span-mother2">
+                <span>J</span>
+                <span>o</span>
+                <span>b</span>
+                <span>s</span>
+              </span>
+            </button>
+            <button
+              style={{ cursor: "pointer" }}
               onClick={() => (window.location.href = "#whynoteslide")}
               className="text_button bg-white text-gray-700"
             >
