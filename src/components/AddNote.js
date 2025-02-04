@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 const AddNote = () => {
   const MAX_FILE_SIZE_MB = 1024; // 1 GB in MB
   const [selectedFile, setSelectedFile] = useState(null);
+  const [driveUrl, setDriveUrl] = useState("");
   const [title, setTitle] = useState("");
   const [shortTitle, setShortTitle] = useState("");
   const [school, setSchool] = useState("");
@@ -38,6 +39,20 @@ const AddNote = () => {
     "Research",
     "Technology",
   ];
+
+  const handleDriveUrlChange = (event) => {
+    setDriveUrl(event.target.value);
+    setSelectedFile(null); // Clear file if a drive URL is entered
+  };
+
+  const validateDriveUrl = async (url) => {
+    try {
+      const response = await fetch(url, { method: "HEAD" });
+      return response.ok;
+    } catch (error) {
+      return false;
+    }
+  };
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -87,15 +102,34 @@ const AddNote = () => {
       navigate("/auth?redirect=upload");
     }
     setLoading(true);
-    if (!selectedFile || !title || !shortTitle || !interest || !description) {
-      alert("Please fill all fields and select a file.");
+
+    if (!title || !shortTitle || !interest || !description) {
+      alert("Please fill all required fields.");
       setLoading(false);
       return;
     }
 
+    if (!selectedFile && !driveUrl) {
+      alert("Please upload a PDF or provide a Google Drive URL.");
+      setLoading(false);
+      return;
+    }
+
+    if (driveUrl) {
+      const isPublic = await validateDriveUrl(driveUrl);
+      if (!isPublic) {
+        alert(
+          "The Google Drive link is not publicly accessible. Please change the sharing settings."
+        );
+        setLoading(false);
+        return;
+      }
+    }
+
     try {
       const formData = new FormData();
-      formData.append("pdf_file", selectedFile);
+      if (selectedFile) formData.append("pdf_file", selectedFile);
+      if (driveUrl) formData.append("drive_url", driveUrl);
       formData.append("title", title);
       formData.append("short_title", shortTitle);
       formData.append("school", school);
@@ -104,7 +138,7 @@ const AddNote = () => {
       formData.append("user_id", user.id);
       formData.append("interest", interest);
 
-      const uploadUrl = "https://noteslidebackend.onrender.com/api/uploadnote/";
+      const uploadUrl = "http://127.0.0.1:8000/api/uploadnote/";
 
       const response = await fetch(uploadUrl, {
         method: "POST",
@@ -295,47 +329,52 @@ const AddNote = () => {
                 ))}
               </select>
               <div className="w-full md:w-4/5 mx-auto flex flex-row space-x-8">
-                <div className="w-1/2 text-center">
-                  <label
-                    htmlFor="file-upload"
-                    className="p-6 mb-2 flex flex-col items-center justify-center h-auto bg-zinc-100 rounded-2xl border-2 border-dashed border-gray-400 cursor-pointer"
-                  >
-                    <CloudUploadIcon style={{ fontSize: 40, color: "gray" }} />
-                    <span className="hidden md:flex mt-2 text-base leading-normal text-center text-gray-600">
-                      Drag & drop your PDF here, or click to select
-                    </span>
-                    <span className="flex md:hidden mt-2 text-base leading-normal text-center text-gray-600">
-                      Add PDF here
-                    </span>
-                    <input
-                      id="file-upload"
-                      type="file"
-                      className="hidden"
-                      onChange={handleFileChange}
-                    />
-                  </label>
-                  {selectedFile && (
-                    <p className="font-semibold text-sm text-gray-600">
-                      Selected file: {selectedFile.name}
-                    </p>
-                  )}
-                  {!selectedFile && (
-                    <a
-                      href="https://smallpdf.com/jpg-to-pdf"
-                      target="_blank"
-                      className="text-md text-gray-600 underline hover:text-black"
+                <div className="flex flex-col w-1/2">
+                  <div className="text-center">
+                    <label
+                      htmlFor="file-upload"
+                      className="p-4 mb-2 flex flex-col items-center justify-center h-auto bg-zinc-100 rounded-2xl border-2 border-dashed border-gray-400 cursor-pointer"
                     >
-                      Covert image to pdf
-                    </a>
-                  )}
+                      <CloudUploadIcon
+                        style={{ fontSize: 30, color: "gray" }}
+                      />
+                      <span className="flex mt-2 text-sm leading-normal text-center text-gray-600">
+                        Add PDF here
+                      </span>
+                      <input
+                        id="file-upload"
+                        type="file"
+                        className="hidden"
+                        onChange={handleFileChange}
+                      />
+                    </label>
+                    {selectedFile && (
+                      <p className="font-semibold text-sm text-gray-600">
+                        Selected file: {selectedFile.name}
+                      </p>
+                    )}
+                  </div>
+                  <p className="font-outfit text-lg text-gray-700 text-center pb-1">
+                    - OR -
+                  </p>
+                  <div className="">
+                    <input
+                      type="text"
+                      value={driveUrl}
+                      onChange={handleDriveUrlChange}
+                      placeholder="Google Drive URL"
+                      className="mb-4 px-4 py-2 border border-gray-600 rounded-md w-full justify-center"
+                    />
+                  </div>
                 </div>
+
                 <div className="w-1/2">
                   <textarea
                     type="text"
                     value={description}
                     onChange={handleDescriptionChange}
                     placeholder="Enter description (300 characters max)"
-                    className="mb-4 flex flex-grow w-full h-40 px-4 py-2 border border-gray-600 rounded-md text-start justify-center"
+                    className="mb-4 flex flex-grow w-full h-44 px-4 py-2 border border-gray-600 rounded-md text-start justify-center"
                     maxLength="300"
                   />
                 </div>
