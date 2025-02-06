@@ -362,8 +362,8 @@ const AddNote = () => {
                       type="text"
                       value={driveUrl}
                       onChange={handleDriveUrlChange}
-                      placeholder="Google Drive URL"
-                      className="mb-4 px-4 py-2 border border-gray-600 rounded-md w-full justify-center"
+                      placeholder="PUBLICLY VIEWABLE Google Doc URL"
+                      className="mb-4 px-4 py-2 border border-gray-600 rounded-md text-sm w-full justify-center"
                     />
                   </div>
                 </div>
