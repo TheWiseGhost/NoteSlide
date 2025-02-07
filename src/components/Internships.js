@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./blog/Navbar";
 import { Helmet } from "react-helmet-async";
 
@@ -15,7 +15,7 @@ const About = () => {
       <h1 className="font-outfit text-black font-medium text-5xl">
         What is NoteSlide's Internships
       </h1>
-      <p className="font-nats pt-6 text-gray-900 text-lg leading-10 pr-20">
+      <p className="font-nats pt-6 text-gray-900 text-lg leading-10 pr-4 md:pr-20">
         NoteSlide is a startup aiming to help students around the world share
         their notes for free, without any paywalls or restrictions. Imagine
         YouTube but with notes instead. Plus, users can make money off of their
@@ -23,7 +23,7 @@ const About = () => {
         the userbase.
       </p>
 
-      <p className="font-nats pt-6 text-gray-900 text-lg leading-10 pr-20">
+      <p className="font-nats pt-6 text-gray-900 text-lg leading-10 pr-4 md:pr-20">
         We offer multiple internships to students ranging from high school
         students to graduates to help people gain a deeper understanding of what
         work at a startup is like and how to move quickly in the business world.
@@ -43,19 +43,19 @@ const KeyInfo = () => {
       <h1 className="font-outfit text-black font-medium text-5xl">
         Key Information
       </h1>
-      <p className="font-nats pt-6 text-gray-900 text-lg leading-10 pr-20">
+      <p className="font-nats pt-6 text-gray-900 text-lg leading-10 pr-4 md:pr-20">
         Anybody can apply, we do not disrcimate based on race or gender. We also
         do not participate in diversity initiatives or any outside influences to
         choose our candidates.
       </p>
 
-      <p className="font-nats pt-4 text-gray-900 text-lg leading-10 pr-20">
+      <p className="font-nats pt-4 text-gray-900 text-lg leading-10 pr-4 md:pr-20">
         High School students are also welcome to apply, not just college and
         graduate students. We offer plenty of ways for anyone to learn and gain
         something from this internship
       </p>
 
-      <p className="font-nats pt-4 text-gray-900 text-lg leading-10 pr-20">
+      <p className="font-nats pt-4 text-gray-900 text-lg leading-10 pr-4 md:pr-20">
         Workload is weekly and remote. However, the amount expected from an
         intern is minimum and we largely expect interns to do what they think
         they are capable of. Our pay and promotions are performance based so we
@@ -63,14 +63,14 @@ const KeyInfo = () => {
         weeks.
       </p>
 
-      <p className="font-nats pt-4 text-gray-900 text-lg leading-10 pr-20">
+      <p className="font-nats pt-4 text-gray-900 text-lg leading-10 pr-4 md:pr-20">
         This is an experience internship designed to be a resume booster. Do not
         expect the pay to be significant. You can be promoted to a Manager
         position within NoteSlide, which brings more pay, but interns should not
         expect to make a living wage. Again, pay is based on performance.
       </p>
 
-      <p className="font-nats pt-4 text-gray-900 text-lg leading-10 pr-20">
+      <p className="font-nats pt-4 text-gray-900 text-lg leading-10 pr-4 md:pr-20">
         We offer letters of rec and free training so if you are struggling or
         need help with something, please feel free to ask. We are more than
         happy to go the extra mile to help our team.
@@ -81,7 +81,7 @@ const KeyInfo = () => {
 
 const Sales = () => {
   return (
-    <div className="flex flex-col pl-6 font-nats pr-20 text-gray-900">
+    <div className="flex flex-col pl-6 font-nats pr-4 md:pr-20 text-gray-900">
       <h1 className="font-outfit text-black font-medium text-5xl">
         Sales Internship
       </h1>
@@ -148,7 +148,7 @@ const Sales = () => {
 
 const Marketing = () => {
   return (
-    <div className="flex flex-col pl-6 font-nats pr-20 text-gray-900">
+    <div className="flex flex-col pl-6 font-nats pr-4 md:pr-20 text-gray-900">
       <h1 className="font-outfit text-black font-medium text-5xl">
         Marketing Internship
       </h1>
@@ -213,7 +213,61 @@ const Marketing = () => {
   );
 };
 
-const SidebarNavigation = () => {
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowSize;
+};
+
+const MobileSidebarNavigation = () => {
+  const [activePage, setActivePage] = useState("about");
+
+  return (
+    <div className="flex flex-col pb-12 px-4">
+      {/* Dropdown Navigation */}
+      <div className="w-full p-4 font-outfit">
+        <select
+          value={activePage}
+          onChange={(e) => setActivePage(e.target.value)}
+          className="w-full p-2 border-2 border-gray-200 rounded-lg"
+        >
+          {pages.map((page) => (
+            <option key={page.key} value={page.key}>
+              {page.name}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Main Content */}
+      <div className="w-full p-2">
+        {activePage === "about" && <About />}
+        {activePage === "key-info" && <KeyInfo />}
+        {activePage === "sales-internship" && <Sales />}
+        {activePage === "marketing-internship" && <Marketing />}
+      </div>
+    </div>
+  );
+};
+
+const DesktopSidebarNavigation = () => {
   const [activePage, setActivePage] = useState("about");
 
   return (
@@ -248,6 +302,9 @@ const SidebarNavigation = () => {
 };
 
 const Internships = () => {
+  const { width } = useWindowSize();
+  const isMobile = width <= 768;
+
   return (
     <>
       <Helmet>
@@ -263,7 +320,11 @@ const Internships = () => {
           <Navbar />
         </div>
         <div className="h-fit pt-28">
-          <SidebarNavigation />
+          {isMobile ? (
+            <MobileSidebarNavigation />
+          ) : (
+            <DesktopSidebarNavigation />
+          )}
         </div>
       </div>
     </>
