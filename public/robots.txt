@@ -1,3 +1,8 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://note-slide.com/sitemap.xml
+
+# Optimize crawl rate
+Crawl-delay: 1

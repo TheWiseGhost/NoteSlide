@@ -150,7 +150,20 @@ const ViewNote = ({ id }) => {
             name="description"
             content={`${note.description}. This note called ${note.title} was published to NoteSlide by ${note.username} and relates to the interest ${note.interest}.`}
           />
+          <meta
+            name="keywords"
+            content={`${note.title}, ${note.interest}, study notes, academic resources`}
+          />
           <link rel="canonical" href={`https://note-slide.com/view/${id}`} />
+
+          {/* Open Graph tags for social sharing */}
+          <meta property="og:title" content={`${note.title} | NoteSlide`} />
+          <meta property="og:description" content={note.description} />
+          <meta
+            property="og:url"
+            content={`https://note-slide.com/view/${id}`}
+          />
+          <meta property="og:type" content="article" />
         </Helmet>
       )}
       <div className="flex min-h-screen ml-6">
