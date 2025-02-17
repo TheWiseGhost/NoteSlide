@@ -25,8 +25,23 @@ const ViewNote = ({ id }) => {
   const user = JSON.parse(localStorage.getItem("user"));
   const isSmallScreen = useMediaQuery({ query: "(max-width: 600px)" });
 
+  const isSearchBot = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const bots = [
+      "googlebot",
+      "bingbot",
+      "yandexbot",
+      "duckduckbot",
+      "slurp",
+      "baiduspider",
+      "facebot",
+      "ia_archiver",
+    ];
+    return bots.some((bot) => userAgent.includes(bot));
+  };
+
   useEffect(() => {
-    if (!user) {
+    if (!user && !isSearchBot()) {
       navigate(`/auth?redirect=view/${id}`);
     }
   }, []);
@@ -35,16 +50,23 @@ const ViewNote = ({ id }) => {
     // Fetch the note by ID
     const fetchNote = async () => {
       try {
-        const response = await fetch(
-          `https://noteslidebackend.onrender.com/api/note/${id}/`,
-          {
-            method: "POST", // or the appropriate HTTP method
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ user_id: user.id }),
-          }
-        );
+        let url;
+        if (isSearchBot()) {
+          // Use SEO endpoint for bots
+          url = `https://noteslidebackend.onrender.com/api/note/seo/${id}/`;
+        } else {
+          // Original endpoint for logged-in users
+          url = `https://noteslidebackend.onrender.com/api/note/${id}/`;
+        }
+
+        const response = await fetch(url, {
+          method: isSearchBot() ? "GET" : "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: !isSearchBot() && JSON.stringify({ user_id: user?.id }),
+        });
+
         const data = await response.json();
         setNote(data);
       } catch (error) {
