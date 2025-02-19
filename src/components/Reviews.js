@@ -5,7 +5,7 @@ import "../index.css";
 const Reviews = () => {
   return (
     <div
-      className="flex flex-col items-center pt-16 min-h-screen bg-white p-4"
+      className="flex flex-col items-center pt-16 pb-8 bg-white p-4"
       id="reviews"
     >
       <h1 className="text-center text-4xl mb-12 font-outfit font-semibold">
@@ -42,29 +42,6 @@ const Reviews = () => {
           <p className="text-neutral-800 text-2xl font-outfit mx-4">
             “Learned so much in just minutes!”
           </p>
-        </div>
-      </div>
-      <div className="flex flex-row items-center justify-center space-x-6 md:space-x-16 mb-4 mt-8">
-        <div className="flex items-center w-1/5">
-          <img
-            src="/images/GoogleReviews.png"
-            alt="Google Reviews"
-            className="w-full pt-6 mr-2"
-          />
-        </div>
-        <div
-          className="flex wipe items-center py-4 px-4 md:px-6 text-xl mt-6"
-          style={{ cursor: "pointer" }}
-          onClick={() => (window.location.href = "#")}
-        >
-          <span className="font-outfit text-center">Get Notes</span>
-        </div>
-        <div className="flex items-center w-1/5">
-          <img
-            src="/images/Trustpilot.png"
-            alt="Trustpilot Rating"
-            className="w-full pt-6 mr-2"
-          />
         </div>
       </div>
     </div>
