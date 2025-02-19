@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "https://noteslidebackend.onrender.com/api/sitemap.xml/"
+  status = 200
+  force = true
