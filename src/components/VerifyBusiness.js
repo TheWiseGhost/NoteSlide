@@ -35,7 +35,13 @@ const VerifyBusiness = () => {
     verifyBusiness();
   }, [token]);
 
-  return <div className="items-center justify-center"></div>;
+  return (
+    <div className="flex flex-col items-center justify-center">
+      <p className="font-outfit text-gray-700 text-lg text-center">
+        Verifying...
+      </p>
+    </div>
+  );
 };
 
 export default VerifyBusiness;
