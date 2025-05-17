@@ -1,3 +1,4 @@
+import { IconConfetti } from "@tabler/icons-react";
 import "../index.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
@@ -11,8 +12,16 @@ const Hero = () => {
 
   return (
     <div className="flex flex-col pb-20 md:pb-0 md:min-h-screen bg-white">
+      {/* Acquisition Banner */}
+      <div className="w-full bg-gray-700 text-white py-3 px-4 justify-center items-center font-medium font-nats text-lg flex flex-row text-center">
+        <IconConfetti className="size-6 mr-2" />
+        NoteSlide has been acquired! This is the first MVP edition you can play
+        around with.
+        <IconConfetti className="size-6 ml-2" />
+      </div>
+
       {/* Navigation Bar */}
-      <nav className="w-full flex items-center justify-between p-4 px-8 md:px-20 pt-12 animate-floatDown">
+      <nav className="w-full flex items-center justify-between p-4 px-8 md:px-20 pt-8 animate-floatDown">
         <div className="flex flex-row justify-center w-fit items-center space-x-2 md:space-x-4">
           <img
             src="/images/NoteSlideLogo.png"
@@ -113,7 +122,7 @@ const Hero = () => {
       </nav>
 
       {/* Main Content */}
-      <div className="text-center mt-12">
+      <div className="text-center mt-8">
         <div className="mx-4 md:mx-0 text-5xl md:text-7xl flex flex-col text-center font-outfit font-medium md:font-semibold mb-8 animate-floatUp">
           <h1 className="leading-snug">
             Simply the Best Way to <br className="hidden md:block" /> Share
